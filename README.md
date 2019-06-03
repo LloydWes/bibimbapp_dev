@@ -3,7 +3,10 @@
 Super site pour apprendre le français !
 
 
-Sur heroku [Bibimbapp](https://dev-bibimbapp.herokuapp.com/)
+Sur heroku :
+
+* [Bibimbapp (développement)](https://dev-bibimbapp.herokuapp.com/)
+* [Bibimbapp (production)](https://prod-bibimbapp.herokuapp.com/)
 
 
 # README
