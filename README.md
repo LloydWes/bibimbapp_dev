@@ -1,5 +1,11 @@
 # Bibimpapp
 
+* Brice Jones 
+* Sébastien Broin
+* Pierre-Yves Rousseau
+* Victor Montagné
+* Lloyd Westbury
+
 Super site pour apprendre le français !
 
 
