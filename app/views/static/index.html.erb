@@ -1,0 +1,59 @@
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+
+<%= stylesheet_link_tag    'application'%>
+<%= javascript_include_tag 'application'%>
+<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
+
+
+
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar--bold  navbar-transparent navbar-inverse bg-dark ">
+        <div class="container navbar-container">
+            <!-- Brand/Logo -->
+            <img class="logo" src="/assets/logo/bibimbapp3.png" style="width:30%" alt="">
+</div>
+
+
+<div class="pl-4 d-none d-lg-inline-block">
+    <a href="https://goo.gl/9BbH7R" class="btn btn-styled btn-sm btn-white btn-outline text-uppercase btn-circle" id= "login_index" target="_blank">LOGIN</a>
+</div>
+
+    </nav>
+</div>
+
+
+
+
+<!-- BACKGROUND VIDEO -->
+
+<section class="swiper-js-container background-image-holder" data-holder-type="fullscreen" data-holder-offset="">
+                        <div class="swiper-container" data-swiper-autoplay="true" data-swiper-effect="fade" data-swiper-items="1" data-swiper-space-between="0">
+                            <div class="swiper-wrapper">
+                                <!-- Slide -->
+                                <div class="swiper-slide" data-swiper-autoplay="8000">
+                                    <!-- <div class="slice holder-item holder-item-light has-bg-cover bg-size-cover" style="background-image: url(../../assets/backgrounds/slider/); background-position: bottom center;">  -->
+                                    <video autoplay muted loop id="myVideo"><source src="/assets/backgrounds/slider/video_V3.mp4" type="video/mp4"></video>
+                                        <div class="container d-flex align-items-center">
+                                            <div class="col">
+                                                <div class="row text-center">
+                                                    <div class="col-12">
+                                                        <h2 id="title_index" class="heading heading-xl strong-400 text-uppercase animated" data-animation-in="fadeInDownBig" data-animation-delay="200">
+                                                            Learn French for Free
+                                                        </h2>
+                                                        <p  id="title_index" class="lead animated" data-animation-in="fadeInUpBig" data-animation-delay="200">
+                                                            From Zero to Hero
+                                                        </p>
+                                                        <div class="flex dark">
+                                                          <a href="#0" class="bttn-dark">Get Started</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>

@@ -1,0 +1,106 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ *= require bootstrap/css/bootstrap
+ *= require swiper/css/swiper.min
+ *= require hamburgers/hamburgers.min
+ *= require animate/animate.min
+ *= require fancybox/css/jquery.fancybox.min
+ *= require boomerang.min
+
+ *= require assets/font/font-awesome/css/font-awesome.min
+ *= require assets/font/ionicons/css/ionicons.min
+ *= require assets/font/line-icons/line-icons
+ *= require assets/font/line-icons-pro/line-icons-pro
+ *= require assets/font/linea/arrows/linea-icons
+ *= require assets/font/linea/basic/linea-icons
+ *= require assets/font/linea/ecommerce/linea-icons
+ *= require assets/font/linea/software/linea-icons
+  */
+
+.logo{
+  padding: 30px;
+}
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#login_index{
+  margin-right: 100px;
+}
+
+#title_index{
+  color: white;
+}
+
+$vert:#28a745;
+
+a.bttn-dark {
+  color:$vert;
+  text-decoration:none;
+  -webkit-transition:0.3s all ease;
+  transition:0.3s ease all;
+  &:hover {
+    color:#FFF;
+  }
+  &:focus {
+    color:#FFF;
+  }
+}
+
+.bttn-dark {
+  margin-top:0;
+  font-size:18px;
+  letter-spacing:2px;
+  display:inline-block;
+  text-align:center;
+  width:150px;
+  font-weight:bold;
+  padding:14px 0px;
+  border:3px solid $vert;
+  border-radius:3px;
+  position:relative;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.1);
+  z-index:2;
+  &:before {
+    -webkit-transition:0.5s all ease;
+    transition:0.5s all ease;
+    position:absolute;
+    top:0;
+    left:50%;
+    right:50%;
+    bottom:0;
+    opacity:0;
+    content:'';
+    background-color:$vert;
+    z-index:-1;
+  }
+
+  &:hover {
+    &:before {
+      -webkit-transition:0.5s all ease;
+      transition:0.5s all ease;
+      left:0;
+      right:0;
+      opacity:1;
+    }
+
+  }
+
+}
