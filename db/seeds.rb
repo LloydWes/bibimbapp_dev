@@ -31,7 +31,7 @@ puts "Filling users"
     email: "#{first_name}.#{last_name}@yopmail.com", 
     password: "password", 
     date_of_birth: Faker::Date.between(Date.today-20000, Date.today-4000),
-    gender: rand(0..1) > 0 ? 'Female' : 'Male',
+    gender: rand(0..1) > 0 ? 'female' : 'male',
     avatar: nil,
     is_admin?: false,
     level_id: Level.all.sample.id
@@ -41,18 +41,18 @@ puts "-->users has been filled"
 
 
 puts "Filling lessons"
-  order = 0
+order = 0
 20.times do
   order += 1
   order = 1 if order > 15
   Lesson.create!(level_id: Level.all.sample.id,
-                  order: order,
-                  title: Faker::Lorem.sentence(5),
-                  script: Faker::Lorem.paragraph,
-                  grammar: Faker::Lorem.paragraph,
-                  media: nil,
+    order: order,
+    title: Faker::Lorem.sentence(5),
+    script: Faker::Lorem.paragraph,
+    grammar: Faker::Lorem.paragraph,
+    media: nil,
 
-                  )
+    )
 end
 puts "-->lessons has been filled"
 
@@ -60,9 +60,9 @@ puts "-->lessons has been filled"
 puts "Filling vocabularies"
 100.times do
   Vocabulary.create!(lesson_id: Lesson.all.sample.id,
-                    word: Faker::Color.color_name,
-                    traduction: Faker::Color.hex_color
-                    )
+    word: Faker::Color.color_name,
+    traduction: Faker::Color.hex_color
+    )
 end
 puts "-->vocabularies has been filled"
 
@@ -72,11 +72,11 @@ score = nil
 20.times do
   score = rand(5..20)
   Result.create!(score: rand(5..20),
-                user_id: User.all.sample.id,
-                lesson_id: Lesson.all.sample.id,
-                date_exam: Faker::Time.between( Date.today-200, Date.today),
-                is_past?: score > 15 ? true : false
-                )
+    user_id: User.all.sample.id,
+    lesson_id: Lesson.all.sample.id,
+    date_exam: Faker::Time.between( Date.today-200, Date.today),
+    is_past?: score > 15 ? true : false
+    )
 end
 puts "-->results has been filled"
 
