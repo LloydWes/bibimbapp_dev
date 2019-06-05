@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
  
   def welcome_email(user)
     #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
-    @user = current_user 
+    @user = user 
 
     #on définit une variable @url qu'on utilisera dans la view d’e-mail
     @url  = 'https://prod-bibimbapp.herokuapp.com/' 
