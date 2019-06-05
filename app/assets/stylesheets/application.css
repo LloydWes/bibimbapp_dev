@@ -19,7 +19,7 @@
  *= require animate/animate.min
  *= require fancybox/css/jquery.fancybox.min
  *= require boomerang.min
- 
+
  *= require assets/font/font-awesome/css/font-awesome.min
  *= require assets/font/ionicons/css/ionicons.min
  *= require assets/font/line-icons/line-icons
@@ -29,3 +29,7 @@
  *= require assets/font/linea/ecommerce/linea-icons
  *= require assets/font/linea/software/linea-icons
   */
+
+.test{
+  border: solid 100px black;
+}
