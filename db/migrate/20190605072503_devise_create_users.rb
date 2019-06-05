@@ -38,7 +38,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.date :date_of_birth
       t.string :gender
       t.string :avatar
-      t.boolean :is_admin?
+      t.boolean :is_admin?, :default => false
 
       t.references :level, index: true
 
