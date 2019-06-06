@@ -17,7 +17,7 @@
 
 
 <div class="pl-4 d-none d-lg-inline-block">
-    <a href="https://goo.gl/9BbH7R" class="btn btn-styled btn-sm btn-white btn-outline text-uppercase" id= "login_index" target="_blank">LOGIN</a>
+    <a href="<%= new_user_session_path %>" class="btn btn-styled btn-sm btn-white btn-outline text-uppercase btn-circle" id= "login_index">LOGIN</a>
 </div>
 
     </nav>
@@ -45,7 +45,8 @@
                                                             From Zero to Hero
                                                         </p>
                                                         <div class="flex dark">
-                                                          <a href="#0" class="bttn-dark">GET STARTED</a>
+                                                            <%=link_to "Get Started", new_user_registration_path, method: "get", class: "bttn-dark" %>
+                                                            <!--<a href="<%= new_user_registration_path %>" class="bttn-dark">Get Started</a>-->
                                                         </div>
                                                     </div>
                                                 </div>
