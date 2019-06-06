@@ -61,6 +61,8 @@ GEM
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
     bindex (0.7.0)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
     builder (3.2.3)
@@ -90,6 +92,7 @@ GEM
     crass (1.0.4)
     db_text_search (0.3.0)
       activerecord (>= 4.1.15, < 6.0)
+    debug_inspector (0.0.3)
     devise (4.6.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -105,8 +108,8 @@ GEM
     faker (1.9.3)
       i18n (>= 0.7)
     ffi (1.11.1)
-    font-awesome-rails (4.7.0.4)
-      railties (>= 3.2, < 6.0)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     friendly_id (5.2.5)
       activerecord (>= 4.0.0)
     globalid (0.4.2)
@@ -317,6 +320,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  binding_of_caller
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)

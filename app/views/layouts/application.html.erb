@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Bibimbapp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Bibimbapp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application'%>
-    <%= javascript_include_tag 'application'%>
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
+  <%= stylesheet_link_tag    'application'%>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
 
-  </head>
+</head>
 
-  <link rel="icon" type="image/png" href="/assets/presentation/favicon.png" />
+<link rel="icon" type="image/png" href="/assets/presentation/favicon.png" />
 
-    <body>
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <img class="logo" src="/assets/logo/bibimbapp3.png" style="width:20%" alt="">
+<body>
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <img class="logo" src="/assets/logo/bibimbapp3.png" style="width:20%" alt="">
 
-        <div class="container">
-          <a class="navbar-brand" href=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-          </button>
+    <div class="container">
+      <a class="navbar-brand" href=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      </button>
 
-          <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
-            <ul class="navbar-nav m-auto">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+        <ul class="navbar-nav m-auto">
 
-              <li class="nav-item ">
-                <a class="nav-link" href="/">Courses</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="/">Vocabulary</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="/">Forum</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="/">My profile</a>
-              </li>
-            </ul>
-  <button class="btn btn-styled btn-sm btn-white btn-outline text-uppercase btn-circle"type="button" name="button">Logout</button>
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Courses</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Vocabulary</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Forum</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/">My profile</a>
+          </li>
+        </ul>
+        <button class="btn btn-styled btn-sm btn-white btn-outline text-uppercase btn-circle"type="button" name="button">Logout</button>
 
-          </div>
-        </div>
-      </nav>
+      </div>
+    </div>
+  </nav>
 
-
-    <%= yield %>
-  </body>
+  <%= yield %>
+</body>
+  <%= javascript_include_tag 'application'%>
 </html>
