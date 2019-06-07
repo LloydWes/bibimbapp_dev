@@ -299,7 +299,7 @@ ActiveRecord::Schema.define(version: 2019_06_06_120038) do
     t.date "date_of_birth"
     t.string "gender"
     t.string "avatar"
-    t.boolean "is_admin?", default: false
+    t.boolean "is_admin?"
     t.bigint "level_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -307,14 +307,6 @@ ActiveRecord::Schema.define(version: 2019_06_06_120038) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["level_id"], name: "index_users_on_level_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "userves", force: :cascade do |t|
-    t.string "email"
-    t.string "password"
-    t.string "last_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "vocabularies", force: :cascade do |t|
@@ -329,5 +321,5 @@ ActiveRecord::Schema.define(version: 2019_06_06_120038) do
   add_foreign_key "thredded_messageboard_users", "thredded_messageboards", on_delete: :cascade
   add_foreign_key "thredded_messageboard_users", "thredded_user_details", on_delete: :cascade
   add_foreign_key "thredded_user_post_notifications", "thredded_posts", column: "post_id", on_delete: :cascade
-  add_foreign_key "thredded_user_post_notifications", "userves", column: "user_id", on_delete: :cascade
+  add_foreign_key "thredded_user_post_notifications", "users", on_delete: :cascade
 end
