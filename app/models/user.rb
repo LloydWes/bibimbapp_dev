@@ -3,7 +3,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable
+  :recoverable, :rememberable, :validatable,
+  :omniauthable, omniauth_providers: [:facebook, :google_oauth2, :twitter]
+
 
   has_many :results
   belongs_to :level, optional: true
@@ -18,6 +20,18 @@ class User < ApplicationRecord
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
+  end
+
+  def self.create_from_provider_data(provider_data)
+    where(provider: provider_data.provider, uid: provider_data.uid).first_or_create do | user |
+      user.email = provider_data.info.email
+      user.first_name = provider_data.info.first_name
+      user.last_name = provider_data.info.last_name
+      user.gender = provider_data.info.gender
+      user.is_admin = provider_data.info.is_admin
+      user.password = Devise.friendly_token[0, 20]
+      user.skip_confirmation!
+    end
   end
 
 end
