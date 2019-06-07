@@ -1,43 +1,104 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<section class="slice-lg has-bg-cover bg-size-cover" style="background-image: url(../../assets/images/backgrounds/slider/img-52.jpg); background-position: bottom center;">
+  <div class="container">
+    <div class="row justify-content-center cols-xs-space">
+      <div class="col-lg-6">
+        <div class="form-card form-card--style-2 z-depth-2-top">
+          <div class="form-header text-center">
+            <div class="form-header-icon">
+                <i class="icon ion-log-in"></i>
+            </div>
+          </div>
+          <div class="form-body">
+            <div class="text-center px-2">
+                <h4 class="heading heading-4 strong-400 mb-4">Edit your profile account</h4>
+            </div>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                <%= render "devise/shared/error_messages", resource: resource %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+                <div class="form-control form-control-xl mb-4">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <p><%= f.label :first_name %><br />
+                          <%= f.text_field :first_name %></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <p><%= f.label :last_name %><br />
+                          <%= f.text_field :last_name %></p>
+                      </div>
+                    </div>
+                  </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+                  <p><%= f.label :date_of_birth %><br />
+                    <%= f.date_select :date_of_birth, :start_year => 1901, autofocus: true, autocomplete: "date_of_birth" %></p><br />
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <%= f.radio_button :gender, 'female', :checked => true %>
+                      <%= label :gender, 'Female' %>
+                      <%= f.radio_button :gender, 'male' %>
+                      <%= label :gender, 'Male' %>
+                    </div>
+                  </div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+                <%if @user.avatar.attached?%>
+                  <%= image_tag @user.avatar, alt: 'avatar' %>
+                  <%= f.file_field :avatar, id: "file-4", class: "custom-input-file custom-input-file--4" %>
+                <%else%>
+                  <p>No avatar</p>
+                  <%= f.file_field :avatar, id: "file-4", class: "custom-input-file custom-input-file--4" %>
+                  <label for="file-4">
+                        <span></span>
+                        <strong>
+                            <i class="fa fa-upload"></i>
+                            Choose a file…
+                        </strong>
+                    </label>
+                <%end%>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+                <div class="field">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                <% end %>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+                <div class="field">
+                  <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+                  <%= f.password_field :password, autocomplete: "new-password" %>
+                  <% if @minimum_password_length %>
+                    <br />
+                    <em><%= @minimum_password_length %> characters minimum</em>
+                  <% end %>
+                </div>
 
-<h3>Cancel my account</h3>
+                <div class="field">
+                  <%= f.label :password_confirmation %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+                </div>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+                <div class="field">
+                  <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+                  <%= f.password_field :current_password, autocomplete: "current-password" %>
+                </div>
 
-<%= link_to "Back", :back %>
+                <div class="actions">
+                  <%= f.submit "Update", class: "btn btn-styled  btn-base-1 mt-4"  %>
+                </div>
+              <% end %>
+
+              <h2>Cancel my account</h2>
+
+              <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-styled  btn-base-1 mt-4"  %></p>
+
+              <%= link_to "Back", :back %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>

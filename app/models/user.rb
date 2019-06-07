@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :results
   belongs_to :level, optional: true
+  has_one_attached :avatar
 
   validates :email, presence: true, allow_nil: false
   validates :first_name, presence: true, allow_nil: false
