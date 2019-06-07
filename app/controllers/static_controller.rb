@@ -1,7 +1,13 @@
 class StaticController < ApplicationController
   layout false, only: [:index]
-  def pages
-  end
   def index
+  end
+  def courses
+  end
+  def vocabulary
+  end
+  def forum
+  end
+  def profile
   end
 end
