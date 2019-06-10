@@ -42,19 +42,19 @@
               </li>
             </ul>
 
-           <!--  <button class="btn btn-styled btn-base-1 btn-outline"type="button" name="button">Logout</button>-->
-
             <div class="dropdown">
-        <!--      <%# if user_signed_in? && current_user.is_admin %>
-              <a class="btn btn-outline-danger" href="<%#= admin_root_path %>">Interface d'administration</a>
-              <%# end %>  --> 
+              <% if user_signed_in? && current_user.is_admin? %>
+                <a class="btn btn-outline-danger" href="<%#= admin_root_path %>">Interface d'administration</a>
+              <% end %>  
               <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <% if user_signed_in? %>
-              <%= image_tag current_user.avatar, alt: 'avatar', height: 50, width: 50, class: 'rounded-circle' %>
-              <%= current_user.first_name %> <%= current_user.last_name %>
-              <% else %>
-              Sign_in/Sign_up
-              <% end %>
+                <% if user_signed_in? && current_user.avatar != nil %>
+                  <%= image_tag(current_user.avatar , alt: 'avatar', height: 50, width: 50, class: 'rounded-circle') if current_user.avatar.attached?  %>
+                  <%= current_user.first_name %> <%= current_user.last_name %>
+                <% elsif user_signed_in? %>
+                  <%= current_user.first_name %> <%= current_user.last_name %>
+                <%else%>
+                Sign_in/Sign_up
+                <% end %>
               </button>
 
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
