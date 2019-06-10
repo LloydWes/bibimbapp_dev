@@ -15,15 +15,17 @@
 </head>
 <body>
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar--bold  navbar-transparent navbar-inverse bg-dark ">
+  <nav class="navbar navbar-expand-lg navbar--bold  navbar-transparent">
     <div class="container navbar-container">
       <!-- Brand/Logo -->
       <%= image_tag("logo/bibimbapp3.png", class:'logo', style:"width:30%", alt:"") %>
-    </div>
 
-    <div class="pl-4 d-none d-lg-inline-block">
+
+
       <a href="<%= new_user_session_path %>" class="btn btn-styled btn-sm btn-white btn-outline text-uppercase btn-circle" id= "login_index">LOGIN</a>
+
     </div>
+  
 
   </nav>
 
@@ -33,35 +35,25 @@
 
 
   <!-- BACKGROUND VIDEO -->
-  <div class="video-container">
-    <section class="swiper-js-container background-image-holder" data-holder-type="fullscreen" data-holder-offset="">
-      <div class="swiper-container" data-swiper-autoplay="true" data-swiper-effect="fade" data-swiper-items="1" data-swiper-space-between="0">
-        <div class="swiper-wrapper">
-          <!-- Slide -->
-          <div class="swiper-slide" data-swiper-autoplay="8000">
-            <video autoplay muted loop id="myVideo"><source src="/assets/backgrounds/slider/video_V6.mp4" type="video/mp4"></video>
-              <div class="container d-flex align-items-center">
-                <div class="col">
-                  <div class="row text-center">
-                    <div class="col-12">
-                      <h2 id="title_index" class="heading heading-xl strong-600 text-uppercase animated" data-animation-in="fadeInDownBig" data-animation-delay="200">
-                        Learn French for Free
-                      </h2>
-                      <p  id="title_index" class="lead animated" data-animation-in="fadeInUpBig" data-animation-delay="200">
-                        From Zero to Hero
-                      </p>
-                      <div class="flex dark">
-                        <%=link_to "Get Started", new_user_registration_path, method: "get", class: "bttn-dark" %>
-                        <!--<a href="<%= new_user_registration_path %>" class="bttn-dark">Get Started</a>-->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+<div class="video-header wrap">
+  <div class="fullscreen-video-wrap">
+    <video src="/assets/backgrounds/slider/video_V6.mp4" autoplay loop></video>
+  </div>
+  <div class="header-overlay">
+    <div class="header-content">
+      <h2 id="title_index" class="heading heading-xl strong-600 text-uppercase animated" data-animation-in="fadeInDownBig" data-animation-delay="200">
+        Learn French for Free
+      </h2>
+      <p  id="title_index" class="lead animated" data-animation-in="fadeInUpBig" data-animation-delay="200">
+        From Zero to Hero
+      </p>
+      <div class="flex dark">
+        <%=link_to "Get Started", new_user_registration_path, method: "get", class: "bttn-dark" %>
       </div>
+    </div>
+  </div>
+</div>
 
 
   <!-- PHRASE -->
@@ -145,7 +137,7 @@
               <cite title="Source Title">Haruki Murakami</cite>
             </footer>
             <p class="mt-4">
-              You are never too old to learn new languages. French seems to be difficult in the first place but our team made his best to offer you a great journey. 
+              You are never too old to learn new languages. French seems to be difficult in the first place but our team made his best to offer you a great journey.
             </p>
           </div>
         </div>
