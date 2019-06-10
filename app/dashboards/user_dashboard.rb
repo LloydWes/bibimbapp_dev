@@ -10,8 +10,8 @@ class UserDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     results: Field::HasMany,
     level: Field::BelongsTo,
-    avatar_attachment: Field::HasOne,
-    avatar_blob: Field::HasOne,
+    #avatar_attachment: Field::HasOne,
+    #avatar_blob: Field::HasOne,
     thredded_posts: Field::HasMany.with_options(class_name: "Thredded::Post"),
     thredded_topics: Field::HasMany.with_options(class_name: "Thredded::Topic"),
     thredded_private_posts: Field::HasMany.with_options(class_name: "Thredded::PrivatePost"),
@@ -57,8 +57,8 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :results,
     :level,
-    :avatar_attachment,
-    :avatar_blob,
+    #:avatar_attachment,
+    #:avatar_blob,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -66,8 +66,8 @@ class UserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :results,
     :level,
-    :avatar_attachment,
-    :avatar_blob,
+    #:avatar_attachment,
+    #:avatar_blob,
     :thredded_posts,
     :thredded_topics,
     :thredded_private_posts,
@@ -111,8 +111,8 @@ class UserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :results,
     :level,
-    :avatar_attachment,
-    :avatar_blob,
+    #:avatar_attachment,
+    #:avatar_blob,
     :thredded_posts,
     :thredded_topics,
     :thredded_private_posts,
