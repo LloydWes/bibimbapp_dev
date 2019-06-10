@@ -10,4 +10,7 @@ class StaticController < ApplicationController
   end
   def profile
   end
+  def cours_01
+  end
+
 end
