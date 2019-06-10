@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :users
+      resources :lessons
+      resources :levels
+      resources :results
+      resources :vocabularies
+
+      root to: "users#index"
+    end
   devise_for :users
   authenticated :user do
     root to: 'static#courses', as: :authenticated_root
