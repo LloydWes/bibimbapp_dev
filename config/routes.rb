@@ -11,6 +11,7 @@ get '/courses', to: 'static#courses'
 get '/vocabulary', to: 'static#vocabulary'
 get '/profile', to: 'static#profile'
 get '/level_choice', to: 'static#level_choice'
+get '/cours', to: 'static#cours'
 
 # route for engine forum
 mount Thredded::Engine => '/forum'
