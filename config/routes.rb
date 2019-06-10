@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     root to: 'static#courses', as: :authenticated_root
   end
   root to: 'static#index'
-  get 'pages', to: 'static#pages'
+  # get 'pages', to: 'static#pages'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 get '/courses', to: 'static#courses'
