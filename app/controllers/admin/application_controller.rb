@@ -6,14 +6,10 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
-    # before_action :authenticate_admin
+    before_action :authenticate_admin
     before_action :authenticate_user!
 
 
-    before_action do
-      flash[:danger] = "Access forbiden"
-      redirect_to root_path unless current_user.is_admin?
-    end
 
     def authenticate_admin
       current_user.is_admin?
