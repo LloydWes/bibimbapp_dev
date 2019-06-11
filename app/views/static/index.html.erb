@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
   <script src="https://kit.fontawesome.com/bf77c3f20d.js"></script>
 
-
 </head>
 <body>
   <!-- NAVBAR -->
@@ -22,7 +21,7 @@
 
 
 
-      <a href="<%= new_user_session_path %>" class="btn btn-styled btn-sm btn-white btn-outline text-uppercase btn-circle" id= "login_index">LOGIN</a>
+      <a href="<%= new_user_session_path %>" class="btn btn-styled btn-sm btn-white btn-outline text-uppercase" id= "login_index">LOGIN</a>
 
     </div>
 
@@ -52,14 +51,29 @@
 
         <%=link_to "Get Started", new_user_registration_path, method: "get", class: "bttn-dark" %>
       </div>
+
+
+
+      <section>
+
+      <a href="#" class="scroll-down" address="true"></a>
+
+      </section>
+    </div>
     </div>
   </div>
-</div>
+
 
 
   <!-- PHRASE -->
+  <section id="go_down_anchor" class="ok">
+</section>
+
   <section class="slice-lg sct-color-1">
     <div class="container">
+
+
+
       <div class="text-center">
         <h3 class="heading heading-1 strong-400 text-normal">
           Le français
@@ -151,6 +165,8 @@
   </section>
 
 
+
+
   <!-- NUMBERS -->
 
   <section class="slice-lg sct-color-1 mt-5">
@@ -186,21 +202,6 @@
 
 
 
-  <!-- CONTACT -->
-  <section class="slice bg-base-1">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="text-center">
-            <a href="#" class="btn btn-styled btn-lg btn-white btn-outline btn-circle">
-              Contact us
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
 
   <!-- FOOTER -->
   <footer id="footer" class="footer">
@@ -223,56 +224,42 @@
                     <div class="text-center">
                         <ul class="footer-menu footer-menu-sm">
                             <li>
-                                <a href="https://webpixels.io" target="_blank" style="padding-left: 0;">Official website</a>
+                                <a href="" target="_blank" style="padding-left: 0;">Contact us</a>
                             </li>
                             <li>
-                                <a href="https://instagram.com/webpixels.io" target="_blank" style="padding-left: 0;">Instagram</a>
+                                <a href="https://facebook.com/webpixels" target="_blank" style="padding-left: 0;">Forum</a>
                             </li>
-                            <li>
-                                <a href="https://facebook.com/webpixels" target="_blank" style="padding-left: 0;">Facebook</a>
-                            </li>
-                            <li>
-                                <a href="http://support.wrapbootstrap.com/knowledge_base/topics/usage-licenses" target="_blank">License</a>
-                            </li>
-                            <li>
-                                <a href="https://goo.gl/9BbH7R" target="_blank">Buy now</a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
 
-                <div class="col-lg-3">
-                    <div class="text-center text-lg-right">
-                        <ul class="social-media social-media--style-1-v4">
-                            <li>
-                                <a href="https://www.facebook.com/webpixels/" class="facebook" target="_blank" data-toggle="tooltip" data-original-title="Facebook">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com/webpixels.io/" class="instagram" target="_blank" data-toggle="tooltip" data-original-title="Instagram">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://dribbble.com/webpixels" class="dribbble" target="_blank" data-toggle="tooltip" data-original-title="Dribbble">
-                                    <i class="fa fa-dribbble"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
 </footer>
 <script type="text/javascript">
-
+  $(function() {
+     $('.scroll-down').click (function() {
+       $('html, body').animate({scrollTop: $('section.ok').offset().top }, 'slow');
+       return false;
+     });
+   });
 
 </script>
 <!-- SCRIPTS -->
-<a href="#" class="back-to-top btn-back-to-top"></a>
+<a href="#" class="back-to-top btn-back-to-top btn-style-4"></a>
 <%= javascript_include_tag 'application'%>
+<script type="text/javascript">
+  $(function() {
+     $('.scroll-down').click (function() {
+       $('html, body').animate({scrollTop: $('section.ok').offset().top }, 'slow');
+       return false;
+     });
+   });
+
+</script>
 </body>
 
 </html>

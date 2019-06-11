@@ -31,7 +31,7 @@
                   </div>
 
                   <p><%= f.label :date_of_birth %><br />
-                    <%= f.date_select :date_of_birth, :start_year => 1901, autofocus: true, autocomplete: "date_of_birth" %></p><br />
+                    <%= f.date_select :date_of_birth, :start_year => 1901, order: [:day, :month, :year], autofocus: true, autocomplete: "date_of_birth" %></p><br />
 
                   <div class="col-md-6">
                     <div class="form-group">

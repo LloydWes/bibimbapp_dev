@@ -1,57 +1,57 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<a href="/courses"><img id="logo" class="img-responsive" src="/assets/logo/bibimbapp-dark.png"alt=""></a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="fa fa-bars fa-2" style=""></span>
-</button>
+  <%=link_to image_tag( "/assets/logo/bibimbapp-dark.png", id:"logo", class: "img-responsive", alt: ""), lessons_path  %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fa fa-bars fa-2" style=""></span>
+  </button>
 
 
-         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-           <ul class="navbar-nav m-auto">
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav m-auto">
 
 
-             <li class="nav-item ">
-               <a class="nav-link" href="/courses">Courses</a>
-             </li>
-             <li class="nav-item ">
-               <a class="nav-link" href="/vocabulary">Vocabulary</a>
-             </li>
-             <li class="nav-item ">
-               <a class="nav-link" href="/forum">Forum</a>
-             </li>
-             <li class="nav-item ">
-               <a class="nav-link" href="/profile">My profile</a>
-             </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/lessons">Courses</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/vocabulary">Vocabulary</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/forum">Forum</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/profile">My profile</a>
+      </li>
 
-           </ul>
+    </ul>
 
-           <div class="dropdown">
-             <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <% if user_signed_in? && current_user.avatar != nil %>
-                 <%= image_tag(current_user.avatar , alt: 'avatar', height: 50, width: 50, class: 'rounded-circle') if current_user.avatar.attached?  %>
-                 <%= current_user.first_name %> <%= current_user.last_name %>
-               <% elsif user_signed_in? %>
-                 <%= current_user.first_name %> <%= current_user.last_name %>
-               <%else%>
-               Sign_in/Sign_up
-               <% end %>
-             </button>
+    <div class="dropdown">
+      <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <% if user_signed_in? && current_user.avatar != nil %>
+        <%= image_tag(current_user.avatar , alt: 'avatar', height: 50, width: 50, class: 'rounded-circle') if current_user.avatar.attached?  %>
+        <%= current_user.first_name %> <%= current_user.last_name %>
+        <% elsif user_signed_in? %>
+        <%= current_user.first_name %> <%= current_user.last_name %>
+        <%else%>
+        Sign_in/Sign_up
+        <% end %>
+      </button>
 
-             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-               <% if user_signed_in? %>
-                 <% if user_signed_in? && current_user.is_admin? %>
-                   <a class="dropdown-item text-danger" href="<%= admin_root_path %>">Administration</a>
-                 <% end %>
-               <a class="dropdown-item" href="<%= edit_user_registration_path(current_user.id) %>">Profile</a>
-               <div class="dropdown-divider" role="presentation"></div>
-               <a class="dropdown-item" href="<%= destroy_user_session_path %>" data-method="DELETE">Logout</a>
-               <% else %>
-               <a class="dropdown-item" href="<%= new_user_registration_path %>">Sign up</a>
-               <a class="dropdown-item" href="<%= new_user_session_path %>">Login</a>
-               <% end %>
-             </div>
-           </div>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.is_admin? %>
+        <a class="dropdown-item text-danger" href="<%= admin_root_path %>">Administration</a>
+        <% end %>
+        <a class="dropdown-item" href="<%= edit_user_registration_path(current_user.id) %>">Profile</a>
+        <div class="dropdown-divider" role="presentation"></div>
+        <a class="dropdown-item" href="<%= destroy_user_session_path %>" data-method="DELETE">Logout</a>
+        <% else %>
+        <a class="dropdown-item" href="<%= new_user_registration_path %>">Sign up</a>
+        <a class="dropdown-item" href="<%= new_user_session_path %>">Login</a>
+        <% end %>
+      </div>
+    </div>
 
-         </div>
+  </div>
 
-     </nav>
+</nav>
