@@ -1,0 +1,2 @@
+module UserAssessmentAttemptHelper
+end

@@ -1,0 +1,36 @@
+<div class="container border border-primary">
+	<form action='<%= user_assessment_attempt_path %>' method="post">
+		<% @questions.each do |question| %>
+			<% row_number = 0 %>
+			<label for='question_id_<%= question.id %>'><%= question.question %> (correct answer is : <%= question.correct_letter %>)</label>
+			<% if question.assessment_options.length > 0 %> <!-- verification useless peut etre ... --> <!-- current_answer.answer == option.answer -->
+				<% question.assessment_options.each do |option| %>
+					<% if row_number <= 0 %>
+						<div class='row col-xs-12 col-lg-12'>
+					<% end %>
+					<% current_answer = @answers.find_by(assessment_question_id: question.id) %>
+					<% correct_and_selected = false %>
+					<% incorrect = false %>
+					<% correct_but_not_selected = false %>
+					<% if current_answer.answer == option.answer && current_answer.correct%>
+					<% correct_and_selected = true %>
+					<% elsif current_answer.answer == option.answer && !current_answer.correct%>
+					<% incorrect = true %>
+					<% elsif question.correct_answer == option.answer && !current_answer.correct %>
+					<% correct_but_not_selected = true %>
+					<% end %>
+					<div class="card col-xs-5 col-lg-5 text-center m-1 <%= 'bg-success' if correct_and_selected %><%= 'bg-danger text-white' if incorrect %><%= 'bg-outline-primary' if correct_but_not_selected %>"><%= option.letter %> <%= option.answer %></div>
+					<% row_number += 1 %>
+					<% if row_number >= 2 %>
+						</div>
+						<% row_number = 0 %>
+					<% end %>
+				<% end %>
+					<% if row_number < 2 && row_number > 0 %>
+					</div>
+					<% row_number = 0 %>
+					<% end %>
+			<% end %>
+		<% end %>
+	</form>
+</div>
