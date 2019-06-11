@@ -25,7 +25,7 @@
 
     </ul>
 
-    <div class="dropdown">
+    <div class="dropdown" style="padding-right: 20px">
       <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <% if user_signed_in? && current_user.avatar != nil %>
         <%= image_tag(current_user.avatar , alt: 'avatar', height: 50, width: 50, class: 'rounded-circle') if current_user.avatar.attached?  %>
