@@ -56,10 +56,10 @@ puts "-->users has been filled"
 
 puts "Creating admin"
 User.create!(
-  first_name: 'jean', 
-  last_name: 'dupont', 
-  email: "jean.dupont@yopmail.com", 
-  password: "password", 
+  first_name: 'jean',
+  last_name: 'dupont',
+  email: "jean.dupont@yopmail.com",
+  password: "password",
   date_of_birth: Faker::Date.between(Date.today-20000, Date.today-4000),
   gender: rand(0..1) > 0 ? 'female' : 'male',
   avatar: nil,
