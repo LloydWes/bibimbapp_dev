@@ -36,6 +36,54 @@ ActiveRecord::Schema.define(version: 2019_06_10_120908) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "assessment_answers", force: :cascade do |t|
+    t.string "letter"
+    t.string "answer"
+    t.integer "attempt_number"
+    t.boolean "correct"
+    t.integer "assessment_question_id"
+    t.integer "assessment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["assessment_id"], name: "index_assessment_answers_on_assessment_id"
+    t.index ["assessment_question_id"], name: "index_assessment_answers_on_assessment_question_id"
+    t.index ["user_id"], name: "index_assessment_answers_on_user_id"
+  end
+
+  create_table "assessment_options", force: :cascade do |t|
+    t.string "letter"
+    t.string "answer"
+    t.integer "assessment_question_id"
+    t.integer "assessment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assessment_id"], name: "index_assessment_options_on_assessment_id"
+    t.index ["assessment_question_id"], name: "index_assessment_options_on_assessment_question_id"
+  end
+
+  create_table "assessment_questions", force: :cascade do |t|
+    t.boolean "active"
+    t.integer "order"
+    t.string "question"
+    t.string "correct_letter"
+    t.string "correct_answer"
+    t.integer "assessment_id"
+    t.integer "level_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assessment_id"], name: "index_assessment_questions_on_assessment_id"
+    t.index ["level_id"], name: "index_assessment_questions_on_level_id"
+  end
+
+  create_table "assessments", force: :cascade do |t|
+    t.integer "lesson_id"
+    t.integer "attempt_limit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_assessments_on_lesson_id"
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false

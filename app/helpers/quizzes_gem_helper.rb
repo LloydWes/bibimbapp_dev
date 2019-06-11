@@ -1,0 +1,2 @@
+module QuizzesGemHelper
+end
