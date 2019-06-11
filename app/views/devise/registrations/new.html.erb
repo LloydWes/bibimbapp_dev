@@ -31,7 +31,7 @@
                   </div>
 
                   <p><%= f.label :date_of_birth %><br />
-                    <%= f.date_select :date_of_birth, :start_year => 1901, order: [:day, :month, :year], autofocus: true, autocomplete: "date_of_birth" %></p><br />
+                  <%= f.text_field :date_of_birth, order: [:day, :month, :year], autofocus: true, autocomplete: "date_of_birth", "data-provide" => 'datepicker', class: "form-control form-control-lg datepicker" %></p><br />
 
                   <div class="col-md-6">
                     <div class="form-group">
@@ -41,15 +41,6 @@
                       <%= label :gender, 'Male' %>
                     </div>
                   </div>
-
-                  <%= f.file_field :avatar, id: "file-4", class: "custom-input-file custom-input-file--4" %>
-                    <label for="file-4">
-                        <span></span>
-                        <strong>
-                            <i class="fa fa-upload"></i>
-                            Choose a file…
-                        </strong>
-                    </label>
 
                   <p><%= f.label :email %><br />
                     <%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
