@@ -9,21 +9,18 @@ Rails.application.routes.draw do
       root to: "users#index"
     end
   devise_for :users
+  resources :users,  path: "/users", only: [:show] 
   authenticated :user do
-    root to: 'static#courses', as: :authenticated_root
+    root to: 'lessons#index', as: :authenticated_root
   end
   root to: 'static#index'
-  # get 'pages', to: 'static#pages'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  resources :lessons
 
-resources :lessons
-
-get '/vocabulary', to: 'static#vocabulary'
-get '/profile', to: 'static#profile'
-get '/level_choice', to: 'static#level_choice'
-get '/cours', to: 'static#cours'
-
+  get '/vocabulary', to: 'static#vocabulary'
+  get '/profile', to: 'static#profile'
+  get '/level_choice', to: 'static#level_choice'
+  get '/cours', to: 'static#cours'
 
   # route for engine forum
   mount Thredded::Engine => '/forum'
@@ -34,6 +31,6 @@ get '/cours', to: 'static#cours'
   #   resources :assessment_options
   # end
   # resources :assessment_answers
-  
+
   resource :user_assessment_attempt, only: [:new, :create, :show]
 end
