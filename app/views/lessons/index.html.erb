@@ -1,0 +1,216 @@
+<div class="section-title section-title--style-2 text-center mb-4">
+  <h3 class="section-title-inner heading-2 strong-400">
+    <span>My Courses</span>
+  </h3>
+
+  <section class="slice sct-color-1">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="text-center">
+            <div class="heading heading-2 strong-600 line-height-1_8">
+              Are you ready to improve your French ?
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHOISIR AFFICHAGE NIVEAU -->
+
+
+  <script>
+    $(document).ready(function(){
+      $("#levelA1").click(function(){
+        $(".levelA2").hide();
+        $(".levelB1").hide();
+        $(".levelB2").hide();
+        $(".levelA1").show();
+      });
+    });
+
+    $(document).ready(function(){
+      $("#levelA2").click(function(){
+        $(".levelA1").hide();
+        $(".levelB1").hide();
+        $(".levelB2").hide();
+        $(".levelA2").show();
+      });
+    });
+
+    $(document).ready(function(){
+      $("#levelB1").click(function(){
+        $(".levelA1").hide();
+        $(".levelA2").hide();
+        $(".levelB2").hide();
+        $(".levelB1").show();
+      });
+    });
+
+    $(document).ready(function(){
+      $("#levelB2").click(function(){
+        $(".levelA1").hide();
+        $(".levelA2").hide();
+        $(".levelB1").hide();
+        $(".levelB2").show();
+      });
+    });
+
+    $(document).ready(function(){
+      $("#levelAll").click(function(){
+        $(".levelA1").show();
+        $(".levelA2").show();
+        $(".levelB1").show();
+        $(".levelB2").show();
+      });
+    });
+  </script>
+
+  <section class="sct-color-1">
+    <div class="container">
+      <div class="masonry-filter-menu link-menu link-menu--style-3 text-center">
+        <a class="btn-filter default" id="levelAll">Show all</a>
+        <a class="btn-filter" id="levelA1">A1 NEWBIE</a>
+        <a class="btn-filter" id="levelA2">A2 ELEMENTARY</a>
+        <a class="btn-filter" id="levelB1">B1 INTERMEDIATE</a>
+        <a class="btn-filter" id="levelB2">B2 ADVANCED</a>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <span class="delimiter delimiter--style-1"></span>
+    </div>
+  </section>
+
+  <!-- LEVEL A1-->
+  
+  <div class="levelA1">
+    <div class="col-wrapper--spaced text-center animate-on-scroll fadeInDown">
+      <div class="btn btn-base-4" style="pointer-events: none">A1 NEWBIE</div>
+    </div>
+    <section class="sct-color-1" id="sct_timeline" data-cat="levelA1">
+      <div class="container">
+        <div class="timeline">
+          <% @lessons.select {|lesson| lesson.level.niveau == "A1"}.each do |lesson| %>
+          <div class="timeline-block">
+            <span class="timeline-img"></span>
+            <div class="timeline-content border-0">
+
+              <div class="icon-block icon-block--style-2-v2 text-center">
+                <div class="block-icon rounded">
+                  <i class="<%= lesson.icone %>"></i>
+                </div>
+                <h2 class="heading heading-6 strong-600"><%= lesson.title %></h2>
+                <p class="px-2">
+                </p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- LEVEL A2-->
+
+  <div class="levelA2">
+    <div class="col-wrapper--spaced text-center animate-on-scroll fadeInDown">
+      <i class="fas fa-lock"></i><br>
+      <a href="#" class="btn btn-base-4" style="pointer-events: none">A2 ELEMENTARY </a>
+    </div>
+    <section class="sct-color-1" id="sct_timeline">
+      <div class="container">
+        <button class="btn btn-styled btn-base-3 btn-outline btn-sm"type="button" name="button"><i class="fas fa-lock-open"></i>  Take a shortcut here</button>
+        <div class="timeline">
+          <% @lessons.select {|lesson| lesson.level.niveau == "A2"}.each do |lesson| %>
+          <div class="timeline-block">
+            <span class="timeline-img"></span>
+            <div class="timeline-content border-0">
+
+              <div class="icon-block icon-block--style-2-v2 text-center">
+                <div class="block-icon rounded">
+                  <i class="<%= lesson.icone %>"></i>
+                </div>
+                <h2 class="heading heading-6 strong-600"><%= lesson.title %></h2>
+                <p class="px-2">
+                </p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- LEVEL B1-->
+
+  <div class="levelB1">
+    <div class="col-wrapper--spaced text-center animate-on-scroll fadeInDown">
+      <i class="fas fa-lock"></i> <br>
+      <a href="#" class="btn btn-base-4" style="pointer-events: none">B1 INTERMEDIATE</a>
+    </div>
+    <section class="sct-color-1" id="sct_timeline">
+      <div class="container">
+        <div class="text-center">
+          <button class="btn btn-styled btn-base-3 btn-outline btn-sm"type="button" name="button"><i class="fas fa-lock-open"></i>  Take a shortcut here</button>
+        </div>
+        <div class="timeline">
+          <% @lessons.select {|lesson| lesson.level.niveau == "B1"}.each do |lesson| %>
+          <div class="timeline-block">
+            <span class="timeline-img"></span>
+            <div class="timeline-content border-0">
+
+              <div class="icon-block icon-block--style-2-v2 text-center">
+                <div class="block-icon rounded">
+                  <i class="<%= lesson.icone %>"></i>
+                </div>
+                <h2 class="heading heading-6 strong-600"><%= lesson.title %></h2>
+                <p class="px-2">
+                </p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="levelB2">
+
+    <!-- LEVEL B2-->
+
+    <div class="col-wrapper--spaced text-center animate-on-scroll fadeInDown">
+      <i class="fas fa-lock"></i> <br>
+      <a href="#" class="btn btn-base-4">B2 ADVANCED</a>
+      <br>
+    </div>
+    <section class="sct-color-1" id="sct_timeline">
+      <div class="container">
+        <div class="text-center">
+          <button class="btn btn-styled btn-base-3 btn-outline btn-sm"type="button" name="button"><i class="fas fa-lock-open"></i>  Take a shortcut here</button>
+        </div>
+        <div class="timeline">
+          <% @lessons.select {|lesson| lesson.level.niveau == "B2"}.each do |lesson| %>
+          <div class="timeline-block">
+            <span class="timeline-img"></span>
+            <div class="timeline-content border-0">
+              <div class="icon-block icon-block--style-2-v2 text-center">
+                <div class="block-icon rounded">
+                  <i class="<%= lesson.icone %>"></i>
+                </div>
+                <h2 class="heading heading-6 strong-600"><%= lesson.title %></h2>
+                <p class="px-2">
+                </p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  </div>
