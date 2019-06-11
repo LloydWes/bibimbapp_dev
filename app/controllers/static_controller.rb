@@ -6,8 +6,7 @@ class StaticController < ApplicationController
   end
   def vocabulary
   end
-  def forum
-  end
+
   def profile
   end
 end

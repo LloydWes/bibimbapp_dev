@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_06_145151) do
+ActiveRecord::Schema.define(version: 2019_06_10_120908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2019_06_06_145151) do
     t.bigint "level_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "icone"
     t.index ["level_id"], name: "index_lessons_on_level_id"
   end
 
@@ -320,7 +321,7 @@ ActiveRecord::Schema.define(version: 2019_06_06_145151) do
     t.date "date_of_birth"
     t.string "gender"
     t.string "avatar"
-    t.boolean "is_admin?"
+    t.boolean "is_admin?", default: false
     t.bigint "level_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

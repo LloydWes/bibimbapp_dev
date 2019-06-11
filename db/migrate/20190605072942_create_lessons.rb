@@ -9,7 +9,7 @@ class CreateLessons < ActiveRecord::Migration[5.2]
       t.string :media
 
       t.references :level, index: true
-      
+
 
       t.timestamps
     end

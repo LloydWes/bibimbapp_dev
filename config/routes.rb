@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   get 'pages', to: 'static#pages'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-get '/courses', to: 'static#courses'
+resources :lessons
+
 get '/vocabulary', to: 'static#vocabulary'
-get '/forum', to: 'static#forum'
+
 get '/profile', to: 'static#profile'
 get '/level_choice', to: 'static#level_choice'
 
