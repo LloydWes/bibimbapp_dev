@@ -54,23 +54,24 @@ puts "Filling users"
 end
 puts "-->users has been filled"
 
+puts "Creating admin"
+User.create!(
+  first_name: 'jean', 
+  last_name: 'dupont', 
+  email: "jean.dupont@yopmail.com", 
+  password: "password", 
+  date_of_birth: Faker::Date.between(Date.today-20000, Date.today-4000),
+  gender: rand(0..1) > 0 ? 'female' : 'male',
+  avatar: nil,
+  is_admin?: true,
+  level_id: Level.all.sample.id
+  )
+puts '#######"Admin is jean.dupont@yopmail.com'
+puts "--> Admin has been created"
+
 
 puts "Filling lessons"
 
-# order = 0
-# 20.times do
-#   order += 1
-#   order = 1 if order > 15
-#   Lesson.create!(level: Level.all[0],
-#     order: order,
-#     title: Faker::Lorem.sentence(5),
-#     script: Faker::Lorem.paragraph,
-#     grammar: Faker::Lorem.paragraph,
-#     media: nil,
-#     icone: "fas fa-sort-alpha-down-alt"
-#
-#   )
-# end
 Lesson.create!(level: Level.all[0],
   order: 3,
   title: "Alphabet",
@@ -226,7 +227,6 @@ if rep == 'y'
         is_triggered = true
         answer = correct_answer
       end
-      puts "#{correct_letter} #{correct_answer}-->#{letter} #{answer}"
       AssessmentOption.create!(
         letter: letter,
         answer: answer,
@@ -242,38 +242,6 @@ if rep == 'y'
 end
 
 
-
-
-
-=begin
-  puts "Filling assessment_answers"
-  50.times do
-    case rand(1..4)
-    when 1
-      letter = 1
-      answer = 'a'
-    when 2
-      letter = 2
-      answer = 'b'
-    when 3
-      letter = 3
-      answer = 'c'
-    when 4
-      letter = 4
-      answer = 'd'
-    end
-    AssessmentAnswer.create!(
-      letter: letter,
-      answer: answer,
-      correct: rand(0..1) == 1 ? true : false,
-      assessment_question_id: AssessmentQuestion.all.sample.id,
-      assessment_id: Assessment.all.sample.id,
-      user_id: User.all.sample.id,
-      attempt_number: 1
-      )
-  end
-  puts "-->assessment_answers has been filled"
-=end
 
 
 
