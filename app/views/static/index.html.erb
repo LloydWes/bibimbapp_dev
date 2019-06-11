@@ -33,13 +33,13 @@
 
   <!-- BACKGROUND VIDEO -->
 
-<div class="video-header wrap">
-  <div class="fullscreen-video-wrap">
-    <div class="video-container">
-    <video class="video"src="/assets/backgrounds/slider/video_V6.mp4" autoplay loop></video>
-  </div>
-  </div>
-  <div class="header-overlay">
+  <div class="video-header wrap">
+    <div class="fullscreen-video-wrap">
+      <div class="video-container">
+        <video class="video"src="/assets/backgrounds/slider/video_V6.mp4" autoplay loop></video>
+      </div>
+    </div>
+
     <div class="header-content">
       <h2 id="title_index" class="heading heading-xl strong-600 text-uppercase animated" data-animation-in="fadeInDownBig" data-animation-delay="200">
         Learn French for Free
@@ -53,21 +53,18 @@
       </div>
 
 
-
-      <section>
-
-      <a href="#" class="scroll-down" address="true"></a>
-
-      </section>
-    </div>
+      <div class="container">
+        <section>
+          <a href="#" class="scroll-down" address="true"></a>
+        </section>
+      </div>
     </div>
   </div>
 
-
-
+  
   <!-- PHRASE -->
   <section id="go_down_anchor" class="ok">
-</section>
+  </section>
 
   <section class="slice-lg sct-color-1">
     <div class="container">
@@ -206,60 +203,60 @@
   <!-- FOOTER -->
   <footer id="footer" class="footer">
     <div class="footer-bottom py-4">
-        <div class="container">
-            <div class="row cols-xs-space col-sm-space align-items-center">
-                <div class="col-lg-3 col-12">
-                    <div class="text-center text-lg-left">
-                        <div class="copyright">
-                            <ul class="copy-links no-margin">
-                                <li>
-                                    &copy; 2019 Bibimbapp
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="text-center">
-                        <ul class="footer-menu footer-menu-sm">
-                            <li>
-                                <a href="" target="_blank" style="padding-left: 0;">Contact us</a>
-                            </li>
-                            <li>
-                                <a href="https://facebook.com/webpixels" target="_blank" style="padding-left: 0;">Forum</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-
-
+      <div class="container">
+        <div class="row cols-xs-space col-sm-space align-items-center">
+          <div class="col-lg-3 col-12">
+            <div class="text-center text-lg-left">
+              <div class="copyright">
+                <ul class="copy-links no-margin">
+                  <li>
+                    &copy; 2019 Bibimbapp
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="text-center">
+              <ul class="footer-menu footer-menu-sm">
+                <li>
+                  <a href="" target="_blank" style="padding-left: 0;">Contact us</a>
+                </li>
+                <li>
+                  <a href="https://facebook.com/webpixels" target="_blank" style="padding-left: 0;">Forum</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+
         </div>
+      </div>
     </div>
-</footer>
-<script type="text/javascript">
-  $(function() {
-     $('.scroll-down').click (function() {
-       $('html, body').animate({scrollTop: $('section.ok').offset().top }, 'slow');
-       return false;
-     });
-   });
+  </footer>
+  <script type="text/javascript">
+    $(function() {
+      $('.scroll-down').click (function() {
+        $('html, body').animate({scrollTop: $('section.ok').offset().top }, 'slow');
+        return false;
+      });
+    });
 
-</script>
-<!-- SCRIPTS -->
-<a href="#" class="back-to-top btn-back-to-top btn-style-4"></a>
-<%= javascript_include_tag 'application'%>
-<script type="text/javascript">
-  $(function() {
-     $('.scroll-down').click (function() {
-       $('html, body').animate({scrollTop: $('section.ok').offset().top }, 'slow');
-       return false;
-     });
-   });
+  </script>
+  <!-- SCRIPTS -->
+  <a href="#" class="back-to-top btn-back-to-top btn-style-4"></a>
+  <%= javascript_include_tag 'application'%>
+  <script type="text/javascript">
+    $(function() {
+      $('.scroll-down').click (function() {
+        $('html, body').animate({scrollTop: $('section.ok').offset().top }, 'slow');
+        return false;
+      });
+    });
 
-</script>
+  </script>
 </body>
 
 </html>
