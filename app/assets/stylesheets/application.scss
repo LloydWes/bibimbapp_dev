@@ -29,12 +29,18 @@
  *= require boomerang.min
   */
 
+
 .logo{
   padding: 30px;
 }
 #logo{
   padding: 30px;
   width: 270px;
+}
+
+#logo_index{
+width: 270px;
+  padding: 30px;
 }
 
 html, body {
@@ -122,25 +128,8 @@ body{ margin: 0;
 
 section{text-align: center; margin-top: 50px; font-size: 1.5rem;}
 
-.navbar{z-index: 10;}
-.my-nav .nav-link{color: aliceblue;}
-.my-nav .navbar-brand{color: aliceblue;}
-.navbar-toggler-icon{color: aliceblue;}
 
 
-
-// #myVideo {
-//   position: fixed;
-// 	top: 50%;
-// 	left: 50%;
-// 	min-width: 100%;
-// 	min-height: 100%;
-// 	width: auto;
-// 	height: auto;
-// 	z-index: -100;
-// 	transform: translateX(-50%) translateY(-50%);
-//
-// }
 
 
 
@@ -148,10 +137,6 @@ section{text-align: center; margin-top: 50px; font-size: 1.5rem;}
 #title_index{
   color: white;
 }
-
-
-
-// TEXT
 
 
 
