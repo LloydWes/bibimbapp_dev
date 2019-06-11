@@ -369,7 +369,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_120908) do
     t.date "date_of_birth"
     t.string "gender"
     t.string "avatar"
-    t.boolean "is_admin?"
+    t.boolean "is_admin?", default: false
     t.bigint "level_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
