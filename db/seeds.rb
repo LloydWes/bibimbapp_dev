@@ -22,13 +22,9 @@ rep = STDIN.gets.chomp.downcase.strip
 if rep == 'y'
   puts "Emptying tables"
   AssessmentAnswer.destroy_all if AssessmentAnswer.count > 0
-  puts "--> 1"
   AssessmentOption.destroy_all if AssessmentOption.count > 0
-  puts "--> 2"
   AssessmentQuestion.destroy_all if AssessmentQuestion.count > 0
-  puts "--> 3"
   Assessment.destroy_all if Assessment.count > 0
-  puts "--> 4"
   puts "--> assessments tables are empty"
 end
 
@@ -54,7 +50,7 @@ puts "Filling users"
     avatar: nil,
     is_admin?: false,
     level_id: Level.all.sample.id
-  )
+    )
 end
 puts "-->users has been filled"
 
@@ -82,7 +78,7 @@ Lesson.create!(level: Level.all[0],
   grammar: Faker::Lorem.paragraph,
   media: nil,
   icone: "fas fa-sort-alpha-down-alt"
-)
+  )
 Lesson.create!(level: Level.all[0],
   order: 6,
   title: "Say Hi / Dire Bonjour",
@@ -90,7 +86,7 @@ Lesson.create!(level: Level.all[0],
   grammar: Faker::Lorem.paragraph,
   media: nil,
   icone: "fas fa-handshake"
-)
+  )
 Lesson.create!(level: Level.all[1],
   order: 9,
   title: "Introduce yourself / Se présenter",
@@ -98,7 +94,7 @@ Lesson.create!(level: Level.all[1],
   grammar: Faker::Lorem.paragraph,
   media: nil,
   icone: "fas fa-users"
-)
+  )
 Lesson.create!(level: Level.all[1],
   order: 12,
   title: "Apologize / S'excuser",
@@ -106,7 +102,7 @@ Lesson.create!(level: Level.all[1],
   grammar: Faker::Lorem.paragraph,
   media: nil,
   icone: "fas fa-pray"
-)
+  )
 Lesson.create!(level: Level.all[2],
   order: 15,
   title: "Work / Travailler",
@@ -114,7 +110,7 @@ Lesson.create!(level: Level.all[2],
   grammar: Faker::Lorem.paragraph,
   media: nil,
   icone: "fas fa-paperclip"
-)
+  )
 Lesson.create!(level: Level.all[2],
   order: 18,
   title: "News / Actualités",
@@ -122,7 +118,7 @@ Lesson.create!(level: Level.all[2],
   grammar: Faker::Lorem.paragraph,
   media: nil,
   icone: "fas fa-newspaper"
-)
+  )
 Lesson.create!(level: Level.all[3],
   order: 21,
   title: "Travel / Voyager",
@@ -130,7 +126,7 @@ Lesson.create!(level: Level.all[3],
   grammar: Faker::Lorem.paragraph,
   media: nil,
   icone: "fas fa-luggage-cart"
-)
+  )
 Lesson.create!(level: Level.all[3],
   order: 24,
   title: "Standpoint / Prise de positions",
@@ -138,7 +134,7 @@ Lesson.create!(level: Level.all[3],
   grammar: Faker::Lorem.paragraph,
   media: nil,
   icone: "fas fa-microphone"
-)
+  )
 
 puts "-->lessons has been filled"
 
@@ -149,7 +145,7 @@ puts "Filling vocabularies"
     lesson_id: Lesson.all.sample.id,
     word: Faker::Color.color_name,
     traduction: Faker::Color.hex_color
-  )
+    )
 end
 puts "-->vocabularies has been filled"
 
@@ -178,54 +174,76 @@ if rep == 'y'
   puts "-->assessments has been filled"
 
   puts "Filling assessment_questions"
-  20.times do
+  puts "Filling assessment_options"
+  assessment_id = Assessment.first.id
+  correct_letter = nil
+  correct_answer = nil
+  for n in (1..25)
     case rand(1..4)
     when 1
-      letter = 'a'
+      correct_letter = 'a'
+      correct_answer = Faker::Lorem.sentence(3)
     when 2
-      letter = 'b'
+      correct_letter = 'b'
+      correct_answer = Faker::Lorem.sentence(3)
     when 3
-      letter = 'c'
+      correct_letter = 'c'
+      correct_answer = Faker::Lorem.sentence(3)
     when 4
-      letter = 'd'
+      correct_letter = 'd'
+      correct_answer = Faker::Lorem.sentence(3)
     end
     AssessmentQuestion.create!(
       active: true,
       order: rand(1..10),
       level_id:Level.all.sample.id,
       question: Faker::Lorem.sentence(5) + '?',
-      correct_letter: letter,
-      correct_answer: 'idkwid',
-      assessment_id: Assessment.all.sample.id
+      correct_letter: correct_letter,
+      correct_answer: correct_answer,
+      assessment_id: assessment_id
       )
+    assessment_question_id = AssessmentQuestion.last.id
+    is_triggered = false
+    for i in (1..4)
+      case i
+      when 1
+        letter = 'a'
+        answer = Faker::Lorem.sentence(3)
+      when 2
+        letter = 'b'
+        answer = Faker::Lorem.sentence(3)
+      when 3
+        letter = 'c'
+        answer = Faker::Lorem.sentence(3)
+      when 4
+        letter = 'd'
+        answer = Faker::Lorem.sentence(3)
+      end
+      if i == 4 && !is_triggered
+        letter = correct_letter
+      end
+      if letter == correct_letter
+        is_triggered = true
+        answer = correct_answer
+      end
+      puts "#{correct_letter} #{correct_answer}-->#{letter} #{answer}"
+      AssessmentOption.create!(
+        letter: letter,
+        answer: answer,
+        assessment_question_id: assessment_question_id,
+        assessment_id: assessment_id
+        )
+    end
+    assessment_id += 1 if n % 5 == 0
   end
   puts "-->assessment_questions has been filled"
-
-  puts "Filling assessment_options"
-  80.times do
-    case rand(1..4)
-    when 1
-      letter = 'a'
-      answer = Faker::Lorem.sentence(3)
-    when 2
-      letter = 'b'
-      answer = Faker::Lorem.sentence(3)
-    when 3
-      letter = 'c'
-      answer = Faker::Lorem.sentence(3)
-    when 4
-      letter = 'd'
-      answer = Faker::Lorem.sentence(3)
-    end
-    assess_question = AssessmentQuestion.all.sample
-    AssessmentOption.create!(
-      letter: letter,
-      answer: answer,
-      assessment_question_id: assess_question.id,
-      assessment_id: assess_question.assessment.id
-      )
-  end
   puts "-->assessment_options has been filled"
+
+end
+
+
+
+
 
 =begin
   puts "Filling assessment_answers"
@@ -256,11 +274,6 @@ if rep == 'y'
   end
   puts "-->assessment_answers has been filled"
 =end
-
-end
-
-
-
 
 
 

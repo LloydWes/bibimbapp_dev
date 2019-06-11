@@ -1,9 +1,11 @@
+<p>user <%= user_signed_in? %></p>
 <div class="container border border-primary">
 	<form action='<%= user_assessment_attempt_path %>' method="post">
 		<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
 		<input type='hidden' value='<%= @questions.first.assessment.id %>' name='assessment_id_<%= @questions.first.assessment.id %>'>
 		<% @questions.each do |question| %>
-		<label for='question_id_<%= question.id %>'><%= question.question %> (correct answer is : <%= question.correct_letter %>)</label>
+		<h4><%= question.question %> (correct answer is : <%= question.correct_letter %> : <%= question.correct_answer %>)</h4>
+		<label hidden for='question_id_<%= question.id %>'></label>
 		<% if question.assessment_options.length > 0 %>
 		<ol>
 			<% question.assessment_options.each do |option| %>
