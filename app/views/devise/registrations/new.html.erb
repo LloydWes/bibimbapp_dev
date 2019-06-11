@@ -1,4 +1,4 @@
-  <section class="slice-lg has-bg-cover bg-size-cover" style="background-image: url(../../assets/images/backgrounds/slider/img-52.jpg); background-position: bottom center;">
+  <section class="slice-lg has-bg-cover bg-size-cover" >
     <div class="container">
       <div class="row justify-content-center cols-xs-space">
         <div class="col-lg-6">
@@ -31,7 +31,7 @@
                   </div>
 
                   <p><%= f.label :date_of_birth %><br />
-                    <%= f.date_select :date_of_birth, :start_year => 1901, autofocus: true, autocomplete: "date_of_birth" %></p><br />
+                    <%= f.date_select :date_of_birth, :start_year => 1901, order: [:day, :month, :year], autofocus: true, autocomplete: "date_of_birth" %></p><br />
 
                   <div class="col-md-6">
                     <div class="form-group">
