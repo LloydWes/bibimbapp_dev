@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   devise_for :users
   authenticated :user do
-    root to: 'static#courses', as: :authenticated_root
+    root to: 'lessons#index', as: :authenticated_root
   end
   root to: 'static#index'
   # get 'pages', to: 'static#pages'
@@ -34,6 +34,6 @@ get '/cours', to: 'static#cours'
   #   resources :assessment_options
   # end
   # resources :assessment_answers
-  
+
   resource :user_assessment_attempt, only: [:new, :create, :show]
 end
