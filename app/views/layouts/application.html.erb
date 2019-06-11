@@ -7,89 +7,15 @@
 
     <%= stylesheet_link_tag    'application'%>
     <%= javascript_include_tag 'application'%>
+
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
     <script src="https://kit.fontawesome.com/bf77c3f20d.js"></script>
-
+    <link rel="icon" type="image/png" href="/assets/presentation/favicon.png" />
   </head>
-
-  <link rel="icon" type="image/png" href="/assets/presentation/favicon.png" />
-
     <body>
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
-<a href="/"><img class="logo" src="/assets/logo/bibimbapp-dark.png" style="width:60%" alt=""></a>
-
-        <div class="container">
-          <a class="navbar-brand" href="/"></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-          </button>
-
-          <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
-            <ul class="navbar-nav m-auto">
-
-              <li class="nav-item ">
-                <a class="nav-link" href="/courses">Courses</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="/vocabulary">Vocabulary</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="/forum">Forum</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="/profile">My profile</a>
-              </li>
-            </ul>
-  <button class="btn btn-styled btn-base-1 btn-outline"type="button" name="button">Logout</button>
-
-          </div>
-        </div>
-      </nav>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/flash'%>
     <%= yield %>
-    <footer id="footer" class="footer ">
-        <div class="footer-bottom py-4">
-            <div class="container">
-                <div class="row cols-xs-space col-sm-space align-items-center">
-                    <div class="col-lg-3 col-12">
-                        <div class="text-center text-lg-left">
-                            <div class="copyright">
-                                <ul class="copy-links no-margin">
-                                    <li>
-                                        &copy; 2019 Bibimbapp
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="text-center">
-                            <ul class="footer-menu footer-menu-sm">
-                                <li>
-                                    <a href="https://webpixels.io" target="_blank" style="padding-left: 0;">Official website</a>
-                                </li>
-                                <li>
-                                    <a href="https://instagram.com/webpixels.io" target="_blank" style="padding-left: 0;">Instagram</a>
-                                </li>
-                                <li>
-                                    <a href="https://facebook.com/webpixels" target="_blank" style="padding-left: 0;">Facebook</a>
-                                </li>
-                                <li>
-                                    <a href="http://support.wrapbootstrap.com/knowledge_base/topics/usage-licenses" target="_blank">License</a>
-                                </li>
-                                <li>
-                                    <a href="https://goo.gl/9BbH7R" target="_blank">Buy now</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-
-
+    <%= render 'layouts/footer'%>
   </body>
-
 </html>
