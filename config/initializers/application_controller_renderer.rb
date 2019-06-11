@@ -6,3 +6,5 @@
 #     https: false
 #   )
 # end
+
+ActionController::Renderer::RACK_KEY_TRANSLATION['warden'] ||= 'warden'
