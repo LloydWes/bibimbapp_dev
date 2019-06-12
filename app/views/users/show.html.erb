@@ -1,33 +1,62 @@
-<div class="container d-flex justify-content-center">
-<div class="block block--style-3 mt-4 mb-6 z-depth-3">
-    <div class="profile-picture profile-picture--style-2">
-        <%= image_tag(@user.avatar , alt: 'avatar', height: 100, width: 100, class: 'rounded-circle') if @user.avatar.attached?  %>
-        <div class="block-body text-center">
-            <span class="d-block heading heading-6 strong-600 mb-0"><%= @user.first_name %> <%= @user.last_name %></span>
-            <span class="d-block text-sm strong-500"><%= @user.email %></span>
-        </div>
-        wrote [<%= @user.thredded_user_detail.posts_count %>] posts !
-    </div>
-
-    <hr>
-    <p> The Posts on Bibimbapp forum: <br>
-        <%= Thredded::ApplicationController.render partial: 'thredded/users/posts', locals: { posts: Thredded.posts_page_view(scope: @user.thredded_posts.order_newest_first.limit(5), current_user: @user) } %>
-    </p>
-    <hr>
-   
-    <div class="d-flex">
-        <ul>
-        <div class="pr-4">
-            <i class="fa fa-envelope mr-1"></i>
-            <a href="mailto:<%= @user.email %>" class="link link-sm link--style-3">Message</a>
-        </div>
-        <div class="">
-            <i class="fa fa-user-plus mr-1"></i>
-                Forum Contributions [<%= @user.thredded_user_detail.posts_count %>]
-        </div>
-        </ul>
-    </div>
-</div>
+<div class="section-title section-title--style-2 text-center mb-4">
+  <h3 class="section-title-inner heading-2 strong-400">
+    <span>My profile</span>
+  </h3>
 </div>
 
 
+<div class="container bootstrap snippet">
+
+  <div class="row">
+    <div class="col-sm-3"><!--left col-->
+
+      <div class="row ">
+        <div class="col-sm-10"><h3 ><%= @user.first_name + " " +  @user.last_name.upcase %></h3></div>
+      </div>
+      <div class="text-left ">
+        <div class="pb-0.5">
+          <%= image_tag(@user.avatar , alt: 'avatar',  width: 200) if @user.avatar.attached?  %>
+        </div>
+        <br>
+        <h3>Level : <%= @user.level.niveau if @user.level.present? %></h3>
+        <h5><%= @user.email %></h5>
+        <h5>wrote <%= @user.thredded_user_detail.posts_count %> posts</h5>
+        <h5>date of birth : <%=@user.date_of_birth %> </h5>
+        <h5>gender : <%=@user.gender %> </h5>
+        <p>created at : <%=@user.created_at %> </p>
+        <%= link_to( "Edit profile", edit_user_registration_path, class: "btn btn-primary btn-lg btn-block", style: "font-size: 1.25em") %>
+      </div><br>
+    </div><!--/col-3-->
+    <div class="col-sm-9">
+      <h3>My stats</h3>
+      <hr />
+
+      <div class="tab-pane" id="stats">
+
+
+        <h4>Test passed :</h4>
+        <div class="progress">
+          <div class="progress-bar bg-primary" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <br>
+        <h4>Average of test : </h4>
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <br>
+        <h4>Progress of the current level :</h4>
+        <div class="progress">
+          <div class="progress-bar bg-warning" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <br>
+
+        <h4>Progress of all levels :</h4>
+        <div class="progress">
+          <div class="progress-bar bg-danger" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <br><br><br><br><br><br>
+      </div><!--/col-9-->
+    </div><!--/row-->
+  </div>
+</div>
+</div>
