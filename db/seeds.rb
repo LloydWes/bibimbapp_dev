@@ -10,6 +10,9 @@ require 'faker'
 
 Rails.application.configure do
   config.action_mailer.perform_deliveries = false
+  puts ""
+  puts "*"*10,config.action_mailer.perform_deliveries,"*"*10
+  puts ""
 end
 
 puts "Emptying tables"
@@ -274,6 +277,11 @@ puts "-->results has been filled"
   print "Result : ", Result.count," entries\n"
   puts "--------Seed is done--------"
 
+
+
 Rails.application.configure do
   config.action_mailer.perform_deliveries = true
+  puts ""
+  puts "*"*10,config.action_mailer.perform_deliveries,"*"*10
+  puts ""
 end
