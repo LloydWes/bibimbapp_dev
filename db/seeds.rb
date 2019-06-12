@@ -15,18 +15,18 @@ User.destroy_all
 Level.destroy_all
 puts "--> All tables are empty"
 
-puts "Do you want to empy the assessments tables ? (y/N)"
-print ">"
-rep = STDIN.gets.chomp.downcase.strip
+# puts "Do you want to empy the assessments tables ? (y/N)"
+# print ">"
+# rep = STDIN.gets.chomp.downcase.strip
 
-if rep == 'y'
+# if rep == 'y'
   puts "Emptying tables"
   AssessmentAnswer.destroy_all if AssessmentAnswer.count > 0
   AssessmentOption.destroy_all if AssessmentOption.count > 0
   AssessmentQuestion.destroy_all if AssessmentQuestion.count > 0
   Assessment.destroy_all if Assessment.count > 0
   puts "--> assessments tables are empty"
-end
+# end
 
 puts "Filling levels"
 Level.create!(niveau: "A1", level_description: 'NEWBIE')
@@ -156,15 +156,15 @@ Lesson.create!(level: Level.all[3],
 puts "-->lessons has been filled"
 
 
-puts "Filling vocabularies"
-100.times do
-  Vocabulary.create!(
-    lesson_id: Lesson.all.sample.id,
-    word: Faker::Color.color_name,
-    traduction: Faker::Color.hex_color
-  )
-end
-puts "-->vocabularies has been filled"
+# puts "Filling vocabularies"
+# 100.times do
+#   Vocabulary.create!(
+#     lesson_id: Lesson.all.sample.id,
+#     word: Faker::Color.color_name,
+#     traduction: Faker::Color.hex_color
+#   )
+# end
+# puts "-->vocabularies has been filled"
 
 
 puts "Filling results"
@@ -181,7 +181,7 @@ score = nil
 end
 puts "-->results has been filled"
 
-if rep == 'y'
+# if rep == 'y'
 
   puts "Filling assessments"
   5.times do
@@ -255,7 +255,7 @@ if rep == 'y'
     puts "-->assessment_questions has been filled"
     puts "-->assessment_options has been filled"
 
-  end
+  # end
 
 
 
