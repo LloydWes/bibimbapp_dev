@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       root to: "users#index"
     end
   devise_for :users
-  resources :users,  path: "/users", only: [:show] 
+  resources :users,  path: "/users", only: [:show]
   authenticated :user do
     root to: 'lessons#index', as: :authenticated_root
   end
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/vocabulary', to: 'static#vocabulary'
   get '/profile', to: 'static#profile'
   get '/level_choice', to: 'static#level_choice'
+  get '/contact', to:'static#contact'
   get '/cours', to: 'static#cours'
 
   # route for engine forum
