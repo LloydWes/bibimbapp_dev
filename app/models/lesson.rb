@@ -8,5 +8,6 @@ class Lesson < ApplicationRecord
   validates :title, presence: true
   validates :script, presence: true
   validates :grammar, presence: true
+  validates :description, presence: true
   # validates :media, presence: true
 end
