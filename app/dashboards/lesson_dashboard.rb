@@ -17,6 +17,9 @@ class LessonDashboard < Administrate::BaseDashboard
     script: Field::Text,
     grammar: Field::Text,
     media: Field::String,
+    media2: Field::String,
+    icone: Field::String,
+    description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -45,6 +48,9 @@ class LessonDashboard < Administrate::BaseDashboard
     :script,
     :grammar,
     :media,
+    :icone,
+    :media2,
+    :description,
     :created_at,
     :updated_at,
   ].freeze
@@ -61,6 +67,9 @@ class LessonDashboard < Administrate::BaseDashboard
     :script,
     :grammar,
     :media,
+    :icone,
+    :media2,
+    :description,
   ].freeze
 
   # Overwrite this method to customize how lessons are displayed
