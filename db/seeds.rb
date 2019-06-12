@@ -41,31 +41,31 @@ puts "Filling users"
   last_name = Faker::Name.last_name
   # puts "#{first_name}.#{last_name}@yopmail.com"
   User.create!(
-    first_name: first_name, 
-    last_name: last_name, 
-    email: "#{first_name}.#{last_name}@yopmail.com", 
-    password: "password", 
+    first_name: first_name,
+    last_name: last_name,
+    email: "#{first_name}.#{last_name}@yopmail.com",
+    password: "password",
     date_of_birth: Faker::Date.between(Date.today-20000, Date.today-4000),
     gender: rand(0..1) > 0 ? 'female' : 'male',
     avatar: nil,
     is_admin?: false,
     level_id: Level.all.sample.id
-    )
+  )
 end
 puts "-->users has been filled"
 
 puts "Creating admin"
 User.create!(
-  first_name: 'jean', 
-  last_name: 'dupont', 
-  email: "jean.dupont@yopmail.com", 
-  password: "password", 
+  first_name: 'jean',
+  last_name: 'dupont',
+  email: "jean.dupont@yopmail.com",
+  password: "password",
   date_of_birth: Faker::Date.between(Date.today-20000, Date.today-4000),
   gender: rand(0..1) > 0 ? 'female' : 'male',
   avatar: nil,
   is_admin?: true,
   level_id: Level.all.sample.id
-  )
+)
 puts '#######"Admin is jean.dupont@yopmail.com'
 puts "--> Admin has been created"
 
@@ -78,64 +78,80 @@ Lesson.create!(level: Level.all[0],
   script: Faker::Lorem.paragraph,
   grammar: Faker::Lorem.paragraph,
   media: nil,
+  media2: nil,
+  description: Faker::Lorem.paragraph,
   icone: "fas fa-sort-alpha-down-alt"
-  )
+)
 Lesson.create!(level: Level.all[0],
   order: 6,
   title: "Say Hi / Dire Bonjour",
   script: Faker::Lorem.paragraph,
   grammar: Faker::Lorem.paragraph,
   media: nil,
+  media2: nil,
+  description: Faker::Lorem.paragraph,
   icone: "fas fa-handshake"
-  )
+)
 Lesson.create!(level: Level.all[1],
   order: 9,
   title: "Introduce yourself / Se présenter",
   script: Faker::Lorem.paragraph,
   grammar: Faker::Lorem.paragraph,
   media: nil,
+  media2: nil,
+  description: Faker::Lorem.paragraph,
   icone: "fas fa-users"
-  )
+)
 Lesson.create!(level: Level.all[1],
   order: 12,
   title: "Apologize / S'excuser",
   script: Faker::Lorem.paragraph,
   grammar: Faker::Lorem.paragraph,
   media: nil,
+  media2: nil,
+  description: Faker::Lorem.paragraph,
   icone: "fas fa-pray"
-  )
+)
 Lesson.create!(level: Level.all[2],
   order: 15,
   title: "Work / Travailler",
   script: Faker::Lorem.paragraph,
   grammar: Faker::Lorem.paragraph,
   media: nil,
+  media2: nil,
+  description: Faker::Lorem.paragraph,
   icone: "fas fa-paperclip"
-  )
+)
 Lesson.create!(level: Level.all[2],
   order: 18,
   title: "News / Actualités",
   script: Faker::Lorem.paragraph,
   grammar: Faker::Lorem.paragraph,
   media: nil,
+  media2: nil,
+  description: Faker::Lorem.paragraph,
   icone: "fas fa-newspaper"
-  )
+)
 Lesson.create!(level: Level.all[3],
   order: 21,
   title: "Travel / Voyager",
   script: Faker::Lorem.paragraph,
   grammar: Faker::Lorem.paragraph,
   media: nil,
+  media2: nil,
+  description: Faker::Lorem.paragraph,
   icone: "fas fa-luggage-cart"
-  )
+)
 Lesson.create!(level: Level.all[3],
   order: 24,
   title: "Standpoint / Prise de positions",
   script: Faker::Lorem.paragraph,
   grammar: Faker::Lorem.paragraph,
   media: nil,
+  media2: nil,
+  description: Faker::Lorem.paragraph,
   icone: "fas fa-microphone"
-  )
+)
 
 puts "-->lessons has been filled"
 
@@ -146,7 +162,7 @@ puts "Filling vocabularies"
     lesson_id: Lesson.all.sample.id,
     word: Faker::Color.color_name,
     traduction: Faker::Color.hex_color
-    )
+  )
 end
 puts "-->vocabularies has been filled"
 
@@ -161,7 +177,7 @@ score = nil
     lesson_id: Lesson.all.sample.id,
     date_exam: Faker::Time.between( Date.today-200, Date.today),
     is_past?: score > 15 ? true : false
-    )
+  )
 end
 puts "-->results has been filled"
 
@@ -171,84 +187,84 @@ if rep == 'y'
   5.times do
     Assessment.create!(lesson_id: Lesson.all.sample.id,
       attempt_limit: 10)
-  end
-  puts "-->assessments has been filled"
-
-  puts "Filling assessment_questions"
-  puts "Filling assessment_options"
-  assessment_id = Assessment.first.id
-  correct_letter = nil
-  correct_answer = nil
-  for n in (1..25)
-    case rand(1..4)
-    when 1
-      correct_letter = 'a'
-      correct_answer = Faker::Lorem.sentence(3)
-    when 2
-      correct_letter = 'b'
-      correct_answer = Faker::Lorem.sentence(3)
-    when 3
-      correct_letter = 'c'
-      correct_answer = Faker::Lorem.sentence(3)
-    when 4
-      correct_letter = 'd'
-      correct_answer = Faker::Lorem.sentence(3)
     end
-    AssessmentQuestion.create!(
-      active: true,
-      order: rand(1..10),
-      level_id:Level.all.sample.id,
-      question: Faker::Lorem.sentence(5) + '?',
-      correct_letter: correct_letter,
-      correct_answer: correct_answer,
-      assessment_id: assessment_id
-      )
-    assessment_question_id = AssessmentQuestion.last.id
-    is_triggered = false
-    for i in (1..4)
-      case i
+    puts "-->assessments has been filled"
+
+    puts "Filling assessment_questions"
+    puts "Filling assessment_options"
+    assessment_id = Assessment.first.id
+    correct_letter = nil
+    correct_answer = nil
+    for n in (1..25)
+      case rand(1..4)
       when 1
-        letter = 'a'
-        answer = Faker::Lorem.sentence(3)
+        correct_letter = 'a'
+        correct_answer = Faker::Lorem.sentence(3)
       when 2
-        letter = 'b'
-        answer = Faker::Lorem.sentence(3)
+        correct_letter = 'b'
+        correct_answer = Faker::Lorem.sentence(3)
       when 3
-        letter = 'c'
-        answer = Faker::Lorem.sentence(3)
+        correct_letter = 'c'
+        correct_answer = Faker::Lorem.sentence(3)
       when 4
-        letter = 'd'
-        answer = Faker::Lorem.sentence(3)
+        correct_letter = 'd'
+        correct_answer = Faker::Lorem.sentence(3)
       end
-      if i == 4 && !is_triggered
-        letter = correct_letter
-      end
-      if letter == correct_letter
-        is_triggered = true
-        answer = correct_answer
-      end
-      AssessmentOption.create!(
-        letter: letter,
-        answer: answer,
-        assessment_question_id: assessment_question_id,
+      AssessmentQuestion.create!(
+        active: true,
+        order: rand(1..10),
+        level_id:Level.all.sample.id,
+        question: Faker::Lorem.sentence(5) + '?',
+        correct_letter: correct_letter,
+        correct_answer: correct_answer,
         assessment_id: assessment_id
+      )
+      assessment_question_id = AssessmentQuestion.last.id
+      is_triggered = false
+      for i in (1..4)
+        case i
+        when 1
+          letter = 'a'
+          answer = Faker::Lorem.sentence(3)
+        when 2
+          letter = 'b'
+          answer = Faker::Lorem.sentence(3)
+        when 3
+          letter = 'c'
+          answer = Faker::Lorem.sentence(3)
+        when 4
+          letter = 'd'
+          answer = Faker::Lorem.sentence(3)
+        end
+        if i == 4 && !is_triggered
+          letter = correct_letter
+        end
+        if letter == correct_letter
+          is_triggered = true
+          answer = correct_answer
+        end
+        AssessmentOption.create!(
+          letter: letter,
+          answer: answer,
+          assessment_question_id: assessment_question_id,
+          assessment_id: assessment_id
         )
+      end
+      assessment_id += 1 if n % 5 == 0
     end
-    assessment_id += 1 if n % 5 == 0
+    puts "-->assessment_questions has been filled"
+    puts "-->assessment_options has been filled"
+
   end
-  puts "-->assessment_questions has been filled"
-  puts "-->assessment_options has been filled"
-
-end
 
 
 
 
 
-puts "Displaying tables count"
-print "Level : ", Level.count," entries\n"
-print "User : ", User.count," entries\n"
-print "Lesson : ", Lesson.count," entries\n"
-print "Vocabulary : ", Vocabulary.count," entries\n"
-print "Result : ", Result.count," entries\n"
-puts "--------Seed is done--------"
+  puts "Displaying tables count"
+  print "Level : ", Level.count," entries\n"
+  print "User : ", User.count," entries\n"
+  print "Lesson : ", Lesson.count," entries\n"
+  print "Vocabulary : ", Vocabulary.count," entries\n"
+  print "Result : ", Result.count," entries\n"
+  puts "--------Seed is done--------"
