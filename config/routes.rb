@@ -9,7 +9,8 @@ Rails.application.routes.draw do
       resources :assessment_options
       resources :assessment_answers
       root to: "users#index"
-    end
+  end
+  
   devise_for :users
   resources :users,  path: "/users", only: [:show]
   authenticated :user do
@@ -20,7 +21,6 @@ Rails.application.routes.draw do
   resources :lessons
 
   get '/vocabulary', to: 'static#vocabulary'
-  get '/profile', to: 'static#profile'
   get '/level_choice', to: 'static#level_choice'
   get '/contact', to:'static#contact'
   get '/cours', to: 'static#cours'

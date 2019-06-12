@@ -41,7 +41,7 @@ class LessonDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :level,
     :vocabularies,
-    :results,
+    #:results,
     :id,
     :order,
     :title,
@@ -61,7 +61,7 @@ class LessonDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :level,
     :vocabularies,
-    :results,
+    #:results,
     :order,
     :title,
     :script,
@@ -75,7 +75,7 @@ class LessonDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how lessons are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(lesson)
-  #   "Lesson ##{lesson.id}"
-  # end
+  def display_resource(lesson)
+    "Lesson #{lesson.title}"
+  end
 end

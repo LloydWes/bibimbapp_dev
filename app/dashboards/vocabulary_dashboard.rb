@@ -35,8 +35,8 @@ class VocabularyDashboard < Administrate::BaseDashboard
     :id,
     :word,
     :traduction,
-    :created_at,
-    :updated_at,
+    #:created_at,
+    #:updated_at,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -51,7 +51,7 @@ class VocabularyDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how vocabularies are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(vocabulary)
-  #   "Vocabulary ##{vocabulary.id}"
-  # end
+  def display_resource(vocabulary)
+    "Vocabulary ##{vocabulary.word}"
+  end
 end

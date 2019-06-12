@@ -40,7 +40,7 @@ class UserDashboard < Administrate::BaseDashboard
     last_name: Field::String,
     date_of_birth: Field::DateTime,
     gender: Field::String,
-    avatar: Field::String,
+    #avatar: Field::String,
     is_admin?: Field::Boolean,
     #created_at: Field::DateTime,
     #updated_at: Field::DateTime,
@@ -150,7 +150,7 @@ class UserDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  def display_resource(user)
+    "User #{user.email}"
+  end
 end
