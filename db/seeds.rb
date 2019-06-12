@@ -7,6 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+
+Rails.application.configure do
+  config.action_mailer.perform_deliveries = false
+end
+
 puts "Emptying tables"
 Result.destroy_all
 Vocabulary.destroy_all
@@ -268,3 +273,7 @@ puts "-->results has been filled"
   print "Vocabulary : ", Vocabulary.count," entries\n"
   print "Result : ", Result.count," entries\n"
   puts "--------Seed is done--------"
+
+Rails.application.configure do
+  config.action_mailer.perform_deliveries = true
+end
