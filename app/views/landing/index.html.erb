@@ -17,11 +17,10 @@
   <nav class="navbar navbar-expand-lg navbar--bold  navbar-transparent">
     <div class="container navbar-container">
       <!-- Brand/Logo -->
-      <%= image_tag("logo/bibimbapp3.png", class:'img-fluid', id:'logo_index', alt:"") %>
+      <%= image_tag("logo/bibimbapp3.png", class:'img-fluid', id:'logo_index', alt:"Learn French with fun") %>
 
 
-
-      <a href="<%= new_user_session_path %>" class="btn btn-styled btn-sm btn-white btn-outline text-uppercase" id= "login_index">LOGIN</a>
+      <%= link_to 'LOGIN', new_user_session_path, class: "btn btn-styled btn-sm btn-white btn-outline text-uppercase", id: "login_index"%>
 
     </div>
 
