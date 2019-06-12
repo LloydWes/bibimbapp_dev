@@ -8,8 +8,6 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    results: Field::HasMany,
-    level: Field::BelongsTo,
     #avatar_attachment: Field::HasOne,
     #avatar_blob: Field::HasOne,
     # thredded_posts: Field::HasMany.with_options(class_name: "Thredded::Post"),
@@ -34,19 +32,21 @@ class UserDashboard < Administrate::BaseDashboard
     # thredded_post_moderated_records: Field::HasMany.with_options(class_name: "Thredded::PostModerationRecord"),
     id: Field::Number,
     email: Field::String,
-    encrypted_password: Field::String,
-    reset_password_token: Field::String,
-    reset_password_sent_at: Field::DateTime,
-    remember_created_at: Field::DateTime,
+    #encrypted_password: Field::String,
+    #reset_password_token: Field::String,
+    #reset_password_sent_at: Field::DateTime,
+    #remember_created_at: Field::DateTime,
     first_name: Field::String,
     last_name: Field::String,
     date_of_birth: Field::DateTime,
     gender: Field::String,
     avatar: Field::String,
     is_admin?: Field::Boolean,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    #created_at: Field::DateTime,
+    #updated_at: Field::DateTime,
     admin: Field::Boolean,
+    level: Field::BelongsTo,
+    results: Field::HasMany,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -65,7 +65,7 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :email,
-    :results,
+    #:results,
     :level,
     #:avatar_attachment,
     #:avatar_blob,
@@ -90,18 +90,18 @@ class UserDashboard < Administrate::BaseDashboard
     # :thredded_post_moderation_records,
     # :thredded_post_moderated_records,
     :id,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
+    #:encrypted_password,
+    #:reset_password_token,
+    #:reset_password_sent_at,
+    #:remember_created_at,
     :first_name,
     :last_name,
     :date_of_birth,
     :gender,
-    :avatar,
+    #:avatar,
     :is_admin?,
-    :created_at,
-    :updated_at,
+    #:created_at,
+    #:updated_at,
     :admin,
   ].freeze
 
@@ -109,8 +109,7 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :results,
-    :level,
+    #:results,
     #:avatar_attachment,
     #:avatar_blob,
     # :thredded_posts,
@@ -134,15 +133,16 @@ class UserDashboard < Administrate::BaseDashboard
     # :thredded_post_moderation_records,
     # :thredded_post_moderated_records,
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
+    #:encrypted_password,
+    #:reset_password_token,
+    #:reset_password_sent_at,
+    #:remember_created_at,
     :first_name,
     :last_name,
     :date_of_birth,
     :gender,
-    :avatar,
+    #:avatar,
+    :level,
     :is_admin?,
     :admin,
   ].freeze

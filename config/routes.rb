@@ -3,7 +3,6 @@ Rails.application.routes.draw do
       resources :users
       resources :lessons
       resources :levels
-      resources :results
       resources :vocabularies
       resources :assessments
       resources :assessment_questions 
