@@ -6,15 +6,37 @@
 		<h4><%= question.question %> (correct answer is : <%= question.correct_letter %> : <%= question.correct_answer %>)</h4>
 		<label hidden for='question_id_<%= question.id %>'></label>
 		<% if question.assessment_options.length > 0 %>
-		<ol>
+		<div class='list-group'>
 			<% question.assessment_options.each do |option| %>
-			<li>
-				<%= option.letter %> <%= option.answer %><input type='radio' name='question_id_<%= question.id %>' value='option_id_<%= option.id %>' id='option_id_<%= option.id %>'>
-			</li>
+			<a class='list-group-item list-group-item-action'>
+				<%= option.letter %> <%= option.answer %><input type='radio' name='question_id_<%= question.id %>' value='option_id_<%= option.id %>' id='option_id_<%= option.id %>' required="required">
+			</a>
 			<% end %>
-		</ol>
+		</div>
 		<% end %>
 		<% end %>
 		<input type='submit' value='Envoyer !' class='btn btn-success mb-3'>
 	</form>
 </div>
+
+<script type="text/javascript">
+	$(function(){
+		$('input[type~="radio"]').css('visibility', 'hidden');
+
+		$('a[class~="list-group-item-action"]').css('cursor', 'pointer');
+
+		$('input[type="radio"]').each(function(index, value){
+			if($(this).prop('checked')){
+				$(this).parent().toggleClass('active');
+			}
+		});
+		$('a[class~="list-group-item-action"]').click(function(e){
+			console.log(this);
+			let question_id = $('input[type="radio"]', this).attr('name');
+			console.log(question_id);
+			$(`a[class~="active"] input[name=${question_id}]`).parent().toggleClass('active');
+			$(this).toggleClass('active');
+			$('a[class~="active"] input').prop('checked', true);
+		});
+	});
+</script>

@@ -35,5 +35,5 @@ get '/cours', to: 'static#cours'
   # end
   # resources :assessment_answers
   
-  resource :user_assessment_attempt, only: [:new, :create, :show]
+  resource :user_assessment_attempt, only: [:new, :create, :show, :index]
 end
