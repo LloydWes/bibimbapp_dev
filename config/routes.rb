@@ -1,19 +1,19 @@
 Rails.application.routes.draw do
   namespace :admin do
-      resources :users
-      resources :lessons
-      resources :levels
-      resources :results
-      resources :vocabularies
+    resources :users
+    resources :lessons
+    resources :levels
+    resources :results
+    resources :vocabularies
 
-      root to: "users#index"
-    end
+    root to: "users#index"
+  end
   devise_for :users
   resources :users,  path: "/users", only: [:show]
   authenticated :user do
     root to: 'lessons#index', as: :authenticated_root
   end
-  root to: 'static#index'
+  root to: 'landing#index'
 
   resources :lessons
 
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'static#profile'
   get '/level_choice', to: 'static#level_choice'
   get '/contact', to:'static#contact'
-  get '/cours', to: 'static#cours'
+  # get '/cours', to: 'static#cours'
 
   # route for engine forum
   mount Thredded::Engine => '/forum'
@@ -33,6 +33,12 @@ Rails.application.routes.draw do
   # end
   # resources :assessment_answers
   
-  resource :user_assessment_attempt, only: [:new, :create, :show, :index]
-
+  # resource :user_assessment_attempt, only: [:new, :create, :show, :index]
+  resources :lessons do
+    resources :assessments, only: [:create, :index] do
+      get 'take', to: 'assessments#new', on: :member, as: :new
+      get 'attempt/:attempt', to: 'assessments#show', on: :member, as: :show
+    end
+  end
+  # get "new/:template_id", :to => "Books#new_wp", :on => :collection
 end

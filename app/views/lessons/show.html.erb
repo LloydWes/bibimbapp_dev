@@ -1,9 +1,9 @@
 <!-- LESSON NAME -->
 <div class="section-title section-title--style-1 text-center mb-2">
   <h3 class="section-title-inner text-normal mt-5">
-    <span>A1, LEÇON 2</span>
+    <span><%= @lesson.level.niveau %>, LEÇON <%= @lesson.order %></span>
   </h3>
-  <h4>Dire bonjour à un ami / Say hello to a friend</h4>
+  <h4><%= @lesson.title %></h4>
 
   <span class="section-title-delimiter clearfix d-none"></span>
 </div>
@@ -13,7 +13,7 @@
 <div class="fluid-paragraph text-center">
   <p class="text-lg line-height-1_8 c-gray-light strong-300">
     <i class="fas fa-crosshairs"></i>
-    Goal: you will discover how to say "hi" to your friend, and when you can use it. After this lesson you will be able to say hi to anyone in France.
+    <%= @lesson.description %>
   </p>
 </div>
 
@@ -43,11 +43,9 @@
               <div class="block-content">
                 <h3 class="heading heading-4 strong-600">
 
-                  SCRIPT</h3>
+                SCRIPT</h3>
                 <p>
-                  - Salut ça va ?<br>
-                  - Oui et toi ?<br>
-                  - Ça va bien.
+                  <%= @lesson.script %>
                 </p>
               </div>
             </div>
@@ -67,24 +65,9 @@
           <div class="block-content">
             <h3 class="heading heading-4 strong-600">
 
-              GRAMMAR</h3>
+            GRAMMAR</h3>
             <p>
-              Different ways to say “hi” in French :
-              <br>
-              “Salut” : If you want to say hi to a friend you can say “Salut”,no matter what time it is, (morning, afternoon or night etc).<br>
-              “Bonjour”: this one is the most use cause we can use either to a friend, a member of family or someone we don’t know well. Usually we do not use it at night.<br>
-              “Bonsoir” : means like “Good evening”, we use this one to say hello at night. It is more used in formal way than to friends
-              <br>
-              “Ça va ?” : means “How’re you?” or “How’s it going?”. This expression is really used we use it more between friends or close people, if we want to use it with people we do not well we use more “Comment allez-vous ?”. “Ça va ?” is really used in daily
-              conversation and we can use the same expression to answer. It is super easy.
-              <br>
-              For example:<br>
-              A : - Ça va ?<br>
-              B : - Ça va.<br>
-              Some other way to say Ça va ? = comment vas-tu ? or comment tu vas?(this one is not really but people use it).<br>
-              “Quoi de neuf ?” : means like “what’s up?”, you can use it to ask for news. Or if you don’t know what to talk about.<br>
-              “Enchanté” : means like “nice to meet you”.<br>
-              “Coucou” : it is a bit like “Salut”, just use it with close friend, we can translate it by “hey”.<br>
+              <%= @lesson.grammar %>
             </p>
           </div>
         </div>
@@ -109,26 +92,11 @@
               <div class="block-content">
                 <h3 class="heading heading-4 strong-600">
 
-                  VOCABULARY</h3>
+                VOCABULARY</h3>
                 <p>
-                  salut = hi
-                  <br>
-                  ça va ? = how are you?
-                  <br>
-                  ça va = I am fine
-                  <br>
-                  comment allez-vous ? = polite way to say “how are you?”
-                  <br>
-                  bonjour = hello
-                  <br>
-                  quoi de neuf ? = what’s up?
-                  <br>
-                  bonsoir = good evening
-                  <br>
-                  coucou = hey
-                  <br>
-                  enchanté = nice to meet you
-
+                  <% @lesson.vocabularies.each do |vocabulary| %>
+                  <%= vocabulary.word %> = <%= vocabulary.traduction %><br>
+                  <% end %>
                 </p>
 
               </div>
@@ -146,3 +114,26 @@
     </div>
 
   </section>
+  <section class='container'>
+    <p>
+      <% if @lesson.assessments.length > 0 %>
+      <% if @number_of_attempts == 0 || @number_of_attempts == nil%>
+      Vous n'avez pas encore passé ce test
+      <% else %>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Vous avez passé ce test <%= @number_of_attempts %> fois.
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <% @assessment_attempts.each do |attempt| %>
+          <%= link_to "Visualiser l'essai n°#{attempt.first.attempt_number}", show_lesson_assessment_path(attempt.first.assessment.lesson.id, attempt.first.assessment.id, attempt.first.attempt_number), class: 'dropdown-item' %>
+          <% end %>
+          </div>
+        </div>
+        <% end %>
+      </p>
+      <%= link_to "Passer le test", new_lesson_assessment_path(@lesson.id, @lesson.assessments.first.id), class: 'btn btn-success' %>
+      <% else %>
+      Aucun test n'est disponible pour cette leçon.
+      <% end %>
+    </section>

@@ -29,10 +29,10 @@ if rep == 'y'
 end
 
 puts "Filling levels"
-Level.create!(niveau: "A1")
-Level.create!(niveau: "A2")
-Level.create!(niveau: "B1")
-Level.create!(niveau: "B2")
+Level.create!(niveau: "A1", level_description: 'NEWBIE')
+Level.create!(niveau: "A2", level_description: 'ELEMENTARY')
+Level.create!(niveau: "B1", level_description: 'INTERMEDIATE')
+Level.create!(niveau: "B2", level_description: 'ADVANCED')
 puts "--> levels has been filled"
 
 puts "Filling users"

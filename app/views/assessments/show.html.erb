@@ -1,5 +1,5 @@
 <div class="container border border-primary">
-	<form action='<%= user_assessment_attempt_path %>' method="post">
+	<form action='<%= new_lesson_assessment_path %>' method="post">
 		<% @questions.each do |question| %>
 			<% row_number = 0 %>
 			<h4><%= question.question %> (correct answer is : <%= question.correct_letter %>)</h4>
