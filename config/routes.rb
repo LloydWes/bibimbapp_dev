@@ -3,9 +3,11 @@ Rails.application.routes.draw do
       resources :users
       resources :lessons
       resources :levels
-      resources :results
       resources :vocabularies
-
+      resources :assessments
+      resources :assessment_questions 
+      resources :assessment_options
+      resources :assessment_answers
       root to: "users#index"
     end
   devise_for :users
