@@ -10,10 +10,12 @@ class LessonsController < ApplicationController
   def show
     @lesson = Lesson.find(params[:id])
     @assessment = Assessment.find_by(lesson_id: params[:id])
-    @assessment_attempts = Array.new()
-    @number_of_attempts = getAttemptNumber(@assessment.id)    
-    for i in (1..@number_of_attempts)
-      @assessment_attempts << @assessment.assessment_answers.where(user_id: current_user.id, attempt_number: i)
+    if @assessment != nil
+      @assessment_attempts = Array.new()
+      @number_of_attempts = getAttemptNumber(@assessment.id)    
+      for i in (1..@number_of_attempts)
+        @assessment_attempts << @assessment.assessment_answers.where(user_id: current_user.id, attempt_number: i)
+      end
     end
   end
 
