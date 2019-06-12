@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class LessonDashboard < Administrate::BaseDashboard
+class AssessmentAnswerDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,18 +8,14 @@ class LessonDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    level: Field::BelongsTo,
-    vocabularies: Field::HasMany,
-    results: Field::HasMany,
+    assessment_question: Field::BelongsTo,
+    user: Field::BelongsTo,
+    assessment: Field::BelongsTo,
     id: Field::Number,
-    order: Field::Number,
-    title: Field::String,
-    script: Field::Text,
-    grammar: Field::Text,
-    media: Field::String,
-    media2: Field::String,
-    icone: Field::String,
-    description: Field::Text,
+    letter: Field::String,
+    answer: Field::String,
+    attempt_number: Field::Number,
+    correct: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -30,27 +26,23 @@ class LessonDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :level,
-    :vocabularies,
-    :results,
+    :assessment_question,
+    :user,
+    :assessment,
     :id,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :level,
-    :vocabularies,
-    :results,
+    :assessment_question,
+    :user,
+    :assessment,
     :id,
-    :order,
-    :title,
-    :script,
-    :grammar,
-    :media,
-    :icone,
-    :media2,
-    :description,
+    :letter,
+    :answer,
+    :attempt_number,
+    :correct,
     :created_at,
     :updated_at,
   ].freeze
@@ -59,23 +51,19 @@ class LessonDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :level,
-    :vocabularies,
-    :results,
-    :order,
-    :title,
-    :script,
-    :grammar,
-    :media,
-    :icone,
-    :media2,
-    :description,
+    :assessment_question,
+    :user,
+    :assessment,
+    :letter,
+    :answer,
+    :attempt_number,
+    :correct,
   ].freeze
 
-  # Overwrite this method to customize how lessons are displayed
+  # Overwrite this method to customize how assessment answers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(lesson)
-  #   "Lesson ##{lesson.id}"
+  # def display_resource(assessment_answer)
+  #   "AssessmentAnswer ##{assessment_answer.id}"
   # end
 end

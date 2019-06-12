@@ -1,4 +1,4 @@
-<footer id="footer" class="footer">
+<footer id="footer" class="footer navbar-fixed-bottom">
 	<div class="footer-bottom py-4">
 		<div class="container">
 			<div class="row cols-xs-space col-sm-space align-items-center">
@@ -18,16 +18,15 @@
 					<div class="text-center">
 						<ul class="footer-menu footer-menu-sm">
 							<li>
-								<a href="" target="_blank" style="padding-left: 0;">Contact us</a>
+								<%= link_to 'Contact', contact_path, target: "_blank", style: "padding-left: 0;"%>
 							</li>
 							<li>
-								<a href="" target="_blank" style="padding-left: 0;">Forum</a>
+								<%= link_to 'Forum', thredded_path, target: "_blank", style: "padding-left: 0;"%>
 							</li>
 
 						</ul>
 					</div>
 				</div>
-
 
 			</div>
 		</div>
