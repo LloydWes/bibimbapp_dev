@@ -64,6 +64,7 @@ class UserDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :email,
     :results,
     :level,
     #:avatar_attachment,
@@ -89,7 +90,6 @@ class UserDashboard < Administrate::BaseDashboard
     # :thredded_post_moderation_records,
     # :thredded_post_moderated_records,
     :id,
-    :email,
     :encrypted_password,
     :reset_password_token,
     :reset_password_sent_at,
