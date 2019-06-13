@@ -20,12 +20,22 @@
                   <p><%= f.label :date_of_birth %><br />
                   <%= f.text_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", "data-provide" => 'datepicker', class: "form-control form-control-lg datepicker" %></p><br />
 
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <%= f.radio_button :gender, 'female', :checked => true %>
-                      <%= label :gender, 'Female' %>
-                      <%= f.radio_button :gender, 'male' %>
-                      <%= label :gender, 'Male' %>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <%= f.radio_button :gender, 'female', :checked => true %>
+                        <%= label :gender, 'Female' %>
+                        <%= f.radio_button :gender, 'male' %>
+                        <%= label :gender, 'Male' %>
+                      </div>
+                    </div>
+                    <div>
+                      <%= f.label :level_id, 'Level choice'%>
+                      <%= f.select(:level_id) do %>
+                        <% Level.all.each do |l| -%>
+                          <%= content_tag(:option, l.niveau, value: l.id) %>
+                        <% end %>
+                      <% end %>
                     </div>
                   </div>
 
