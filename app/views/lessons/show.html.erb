@@ -17,6 +17,7 @@
     <p style="white-space: pre-line"><%= @lesson.description %></p>
   </div>
 
+<<<<<<< HEAD
   <section class="slice sct-color-1">
 
     <!-- BLOCK IMAGE -->
@@ -30,6 +31,18 @@
                   <img src="https://images.unsplash.com/photo-1494249465471-5655b7878482?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" class="img-fluid img-center">
                 </a>
               </div>
+=======
+<section class="slice sct-color-1">
+
+  <!-- BLOCK IMAGE -->
+  <div class="container">
+    <div class="col lg-12 mb-3">
+      <div class="row row justify-content-between">
+        <div class="col-lg-5 mb-5">
+          <div class="block block-image-holder">
+            <div class="block-image">
+                <%= image_tag("https://images.unsplash.com/photo-1494249465471-5655b7878482?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80", class: "img-fluid img-center") %>
+>>>>>>> development
             </div>
           </div>
 
@@ -103,11 +116,11 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-5 mb-5">
-            <div class="block block-image-holder">
-              <div class="block-image">
-                <img src="https://images.unsplash.com/photo-1543332164-6e82f355badc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80" class="img-fluid img-center">
-              </div>
+        </div>
+        <div class="col-lg-5 mb-5">
+          <div class="block block-image-holder">
+            <div class="block-image">
+              <%= image_tag("https://images.unsplash.com/photo-1543332164-6e82f355badc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80", class: "img-fluid img-center" ) %>
             </div>
           </div>
         </div>

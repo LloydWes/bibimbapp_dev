@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
   namespace :admin do
-      resources :users
-      resources :lessons
-      resources :levels
-      resources :vocabularies
-      resources :assessments
-      resources :assessment_questions 
-      resources :assessment_options
-      resources :assessment_answers
-      root to: "users#index"
+    resources :users
+    resources :lessons
+    resources :levels
+    resources :vocabularies
+    resources :assessments
+    resources :assessment_questions
+    resources :assessment_options
+    resources :assessment_answers
+    root to: "users#index"
   end
-  
+
   devise_for :users
   resources :users,  path: "/users", only: [:show]
   authenticated :user do
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   root to: 'landing#index'
 
   resources :lessons
-
+  resources :vocabularies, only: [:index]
   get '/vocabulary', to: 'static#vocabulary'
   get '/level_choice', to: 'static#level_choice'
   get '/contact', to:'static#contact'
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   #   resources :assessment_options
   # end
   # resources :assessment_answers
-  
+
   # resource :user_assessment_attempt, only: [:new, :create, :show, :index]
   resources :lessons do
     resources :assessments, only: [:create, :index] do
