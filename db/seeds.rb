@@ -125,63 +125,118 @@ BONUS: Between very close friends, some french people says 'déso', a shortway t
 )
 Lesson.create!(level: Level.all[1],
   order: 3,
-  title: "Introduce yourself / Se présenter",
-  script: Faker::Lorem.paragraph,
-  grammar: Faker::Lorem.paragraph,
-  media: nil,
-  media2: nil,
-  description: Faker::Lorem.paragraph,
+  title: "Se présenter/ Introduce yourself",
+  script:"Bonjour, je m’appelle Alice, j’ai vingt-sept ans. J’aime bien le théâtre et la photographie. J’étudie le français pendant mon temps libre. Je suis allé deux fois en France. J’aime beaucoup les croissants.
+
+Hello, my name is Alice, i am 27 years old. I like theater/drama and photography I study french during my free time. I have been two times in France. I really like croissants.
+",
+  grammar: "In French there are different ways to express what we like:
+enjoy something = apprécier quelque chose. ex = i enjoy reading => j’apprécie lire.
+I like = j’aime bien. ex = I like riding bike => j’aime bien faire du vélo
+love = adorer. ex = i love eating => j’adore manger
+be fond of = être attirer par. ex = i am fond of learning languages => je suis attiré par l’apprentissage des langues.
+To be interested in = apprécier, être intéressé par. ex = I am interested in writing articles about traveling. => je suis intéressé par la rédaction d’articles sur le voyage.",
+  media: "https://images.unsplash.com/photo-1545747868-8ab0d13285e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2668&q=80",
+  media2: "https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  description:"To know how to introduce yourself to other people, and talk about what you like.",
   icone: "fas fa-users"
 )
 Lesson.create!(level: Level.all[1],
   order: 4,
-  title: "Apologize / S'excuser",
-  script: Faker::Lorem.paragraph,
-  grammar: Faker::Lorem.paragraph,
-  media: nil,
-  media2: nil,
-  description: Faker::Lorem.paragraph,
-  icone: "fas fa-pray"
+  title: "Exprimer son opinion / To express one's opinion",
+  script: "Je pense que nous devons parler davantage d’écologie. Selon moi, je trouve que nous n’en parlons pas assez.
+Moi aussi. A mon avis, les politiques n’en parlent pas assez.
+C’est vrai. Mais j’ai l’impression que c’est en train de changer.",
+  grammar:"There are different expressions to explain your point of view in french, here are the most used:
+De mon point vue = from my point of view
+je pense que = i think that ..
+je trouve que = i find that...
+j’ai l’impression que = I have the feeling that
+selon moi = in my opinion
+à mon avis = in my view, in my opinion
+vrai = true",
+
+  media:"https://images.unsplash.com/photo-1551845728-6820a30c64e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  media2: "https://images.pexels.com/photos/630831/pexels-photo-630831.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&w=500",
+  description: "Having some vocabulary to express your opinion.",
+  icone: "fas fa-microphone"
 )
 Lesson.create!(level: Level.all[2],
   order: 5,
-  title: "Work / Travailler",
-  script: Faker::Lorem.paragraph,
-  grammar: Faker::Lorem.paragraph,
-  media: nil,
-  media2: nil,
-  description: Faker::Lorem.paragraph,
+  title: "Travailler / Work",
+  script: "Two friends are talking about their work.
+- Salut, tu travailles demain ?
+- Oui. Mais ça va j’irai au boulot à quatorze heures.
+- Tu as de la chance. Tu vas pouvoir faire la grasse matinée.
+- Pas vraiment. Le matin je dois travailler à distance. Je dois finir d’envoyer des mails et téléphoner à des clients pour préparer la réunion de cet après-midi. Mais en fait je dois partir tôt de chez moi car il y a la grève des bus.
+- Ah d’accord. Tu as quand même de la chance, car mon patron ne veut pas que je travaille à distance.
+- Oui, en plus tu travailles beaucoup en ce moment.
+- Beaucoup trop ! Je dois rendre un projet avant la fin de la semaine. Ensuite je pense que je vais prendre quelques jours pour me reposer. On va sans doute partir à la mer avec des collègues de bureau.
+- C’est une bonne idée.",
+  grammar:"The verb 'devoir'in 'Je dois rendre un projet avant la fin de la semaine' or 'Je dois finir d’envoyer des mails et téléphoner à des clients.'' is used like the verb 'I have to'.
+“sans doute” is an expression to express about something you are not sure about but its close to be sure at the same time. Ex: Je viendrai sans doute à la fête ce weekend =  I will probably go to the party this weekeed.",
+  media: "https://images.pexels.com/photos/1270950/pexels-photo-1270950.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&w=500",
+  media2: "https://images.pexels.com/photos/313690/pexels-photo-313690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  description:"learn more vocabulary about work",
   icone: "fas fa-paperclip"
 )
 Lesson.create!(level: Level.all[2],
   order: 6,
-  title: "News / Actualités",
-  script: Faker::Lorem.paragraph,
-  grammar: Faker::Lorem.paragraph,
-  media: nil,
-  media2: nil,
-  description: Faker::Lorem.paragraph,
-  icone: "fas fa-newspaper"
+  title: "Couleur / Color",
+  script:"- Ces pommes sont vertes.
+- Ces pantalons sont verts
+- Cette voiture est verte
+- Ce crayon est vert",
+  grammar:"Most adjectives in French come after the noun, unlike in English.
+
+In the script we can see that adjectives agreement depends of the noun before. You can see that “vert “ can take different endings depending of the noun before. In French, adjectives must agree with their noun, which means that they have to show whether they are masculine or feminine and singular or plural to match the noun.
+
+So if i want to know how end the adjective i have to first check how is the noun : if the noun is feminine i will put a “e” at the end (“verte”), if its masculine i will put nothing (“vert”), if its plural you have to put “s” at the end of adjective (verts). And if its feminine + plural you add “es” at the end (“vertes”).
+
+Everything is good, but how can i know what is the gender of the nouns? First you can check the grammar determinant before the noun. Ex : la pomme => you see “la” so it means the gender is feminine so you can write “la pomme verte”. You added “e”.
+Second, if you want to take a good habit, everytime you learn a word do not forget to learn it with determinant. If you have to learn the word “pomme” do not learn it without “la”. Like this it will be 10 times easier.
+
+As always in french there are exceptions of the rules… :(. In two cases there are no agreement between noun and adjectives:
+when the colour is described by a phrase containing two or more words (black and white, dark green, light blue)
+ when the colour actually derives from a real thing like a fruit, material, animal (orange, chestnut)
+Ok you did it. Even if we talk about colors and it sounds basics, the agreements are not that easy.  Don’t worry if you don’t memorize everything now, we will see it again and again in other lessons.",
+  media:"https://images.pexels.com/photos/6035/healthy-apple-summer-garden.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+  media2: "https://images.pexels.com/photos/1020315/pexels-photo-1020315.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+  description: "Try to learn basic colors and agreement between adjective and noun.",
+  icone: "fas fa-tint"
 )
 Lesson.create!(level: Level.all[3],
   order: 7,
   title: "Travel / Voyager",
-  script: Faker::Lorem.paragraph,
-  grammar: Faker::Lorem.paragraph,
-  media: nil,
-  media2: nil,
-  description: Faker::Lorem.paragraph,
-  icone: "fas fa-luggage-cart"
+  script:"- Bonjour Monsieur, je souhaiterais me rendre rue Mouffetard, pourriez-vous m’indiquer la direction?
+- Oui bien sûr. Il vous suffit de prendre la première à droite et puis d’aller toujours tout droit.
+- Je vous remercie beaucoup. J’ai un mauvais sens de l’orientation.
+- Je vous en prie.",
+  grammar:  "To ask something (formal way)
+'pourriez-vous' can be translated by 'Would you like to'. It is a polite way to ask something.
+'je souhaiterais' / 'je voudrais' =  this is used to tell something you would like with polite way.",
+  media: "https://images.pexels.com/photos/2132126/pexels-photo-2132126.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&w=500",
+  media2: "https://images.pexels.com/photos/2106776/pexels-photo-2106776.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&w=500",
+  description:"learn how to use vocabulary link to directions",
+  icone: "fas fa-plane"
 )
+
 Lesson.create!(level: Level.all[3],
   order: 8,
-  title: "Standpoint / Prise de positions",
-  script: Faker::Lorem.paragraph,
-  grammar: Faker::Lorem.paragraph,
-  media: nil,
-  media2: nil,
-  description: Faker::Lorem.paragraph,
-  icone: "fas fa-microphone"
+  title: "Actualités / News",
+  script: "Tu as entendu la dernière nouvelle ?
+  Non. Que s’est-il passé ?
+  Il y a eu un incendie à Bordeaux. C’est passé à la télévision.
+  Comment s’est-il déclenché?
+  Les journalistes ont annoncé que la police n’avait toujours pas découvert l’origine de l’incendie.
+  J’espère que personne n’a été blessé.",
+  grammar: "'J’espère que'  = I hope that…
+  Que s’est-il passé ? = What happened ? We can say to Qu’est-il arrivé? or most common way when we talk is to say 'Qu’est ce qu’il s’est passé?'.",
+
+  media: "https://images.unsplash.com/photo-1495020689067-958852a7765e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
+  media2: "https://images.unsplash.com/photo-1552641156-93ea2a5f78e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
+  description: "learn common vocabulary link to news",
+  icone: "fas fa-newspaper"
 )
 
 puts "-->lessons has been filled"
