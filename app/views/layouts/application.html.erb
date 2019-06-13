@@ -5,12 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application'%>
-    <%= javascript_include_tag 'application'%>
+    <%= stylesheet_link_tag    'application.css', type: 'text/css'%>
+    <%= javascript_include_tag 'application.js', type: 'text/javascript'%>
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
     <script src="https://kit.fontawesome.com/bf77c3f20d.js"></script>
-    <link rel="icon" type="image/png" href="/assets/presentation/favicon.png" />
+    <link rel="icon" type="image/png" href="<%= asset_path('presentation/favicon.png')%>" />
   </head>
     <body>
     <%= render 'layouts/header' %>

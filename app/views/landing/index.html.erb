@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag    'application'%>
+  <%= stylesheet_link_tag    'application', type: 'text/css'%>
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
   <script src="https://kit.fontawesome.com/bf77c3f20d.js"></script>
 
@@ -36,7 +36,7 @@
   <div class="video-header wrap">
     <div class="fullscreen-video-wrap">
       <div class="video-container">
-        <video class="video" src="/assets/backgrounds/slider/video_V6.mp4" autoplay loop></video>
+        <video class="video" src="<%= asset_path('backgrounds/slider/video_V6.mp4') %>" autoplay loop></video>
       </div>
     </div>
 
@@ -155,7 +155,7 @@
         </div>
 
         <div class="col-lg-6">
-          <img src="/assets/backgrounds/slider/rue.jpeg" class="img-fluid img-center">
+          <img src="<%= asset_path('backgrounds/slider/rue.jpeg')%>" class="img-fluid img-center">
         </div>
       </div>
     </div>
@@ -170,7 +170,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
-          <img src="/assets/backgrounds/slider/toits2.jpeg" class="img-fluid img-center">
+          <img src="<%= asset_path('backgrounds/slider/toits2.jpeg') %>" class="img-fluid img-center">
         </div>
         <div class="col-lg-3 col-md-6">
           <div class="milestone-counter">
@@ -236,18 +236,10 @@
       </div>
     </div>
   </footer>
-  <script type="text/javascript">
-    $(function() {
-      $('.scroll-down').click (function() {
-        $('html, body').animate({scrollTop: $('section.ok').offset().top }, 'slow');
-        return false;
-      });
-    });
 
-  </script>
   <!-- SCRIPTS -->
   <a href="#" class="back-to-top btn-back-to-top btn-style-4"></a>
-  <%= javascript_include_tag 'application'%>
+  <%= javascript_include_tag 'application', type: 'text/javascript'%>
   <script type="text/javascript">
     $(function() {
       $('.scroll-down').click (function() {
