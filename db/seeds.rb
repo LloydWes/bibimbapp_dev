@@ -351,10 +351,6 @@ puts "Filling assessments"
 
   # end
 
-
-
-
-
   puts "Displaying tables count"
   print "Level : ", Level.count," entries\n"
   print "User : ", User.count," entries\n"
@@ -384,7 +380,11 @@ lesson1 = [
   {'coucou' => 'hey'},
   {'enchanté' => 'nice to meet you'}
 ]
-
+lesson1.each do |voc_hash|
+  voc_hash.each_pair do |key,value|
+    Vocabulary.create(word: key, traduction: value, lesson: Lesson.all[0])
+  end
+end
 lesson2 = [
   {'here' => 'ici'},
   {'je suis désolé' => 'I am sorry '},
@@ -394,7 +394,11 @@ lesson2 = [
   {'veuillez +  verb' => 'Please + verb'},
   {'je vous demande pardon?' => 'Can you repeat please'}
 ]
-
+lesson2.each do |voc_hash|
+  voc_hash.each_pair do |key,value|
+    Vocabulary.create(word: key, traduction: value, lesson: Lesson.all[1])
+  end
+end
 lesson3 = [
   {'Je m’appelle' => 'my name is'},
   {'J’ai … ans' => 'I am … years old'},
@@ -417,7 +421,11 @@ lesson3 = [
   {'vélo' => 'bike'},
   {'faire du vélo' => 'to ride bike'}
 ]
-
+lesson3.each do |voc_hash|
+  voc_hash.each_pair do |key,value|
+    Vocabulary.create(word: key, traduction: value, lesson: Lesson.all[2])
+  end
+end
 lesson4 = [
   {'davantage' => 'more '},
   {'Moi aussi' => 'me too'},
@@ -425,7 +433,11 @@ lesson4 = [
   {'pas assez' => 'not enough'},
   {'devoir' => 'to have to'}
 ]
-
+lesson4.each do |voc_hash|
+  voc_hash.each_pair do |key,value|
+    Vocabulary.create(word: key, traduction: value, lesson: Lesson.all[3])
+  end
+end
 lesson5 = [
   {'travailler' => 'to work'},
   {'la grasse matinée' => 'to sleep in / to have a lie in / to sleep late'},
@@ -453,7 +465,11 @@ lesson5 = [
   {'après-midi' => 'afternoon'},
   {'une réunion' => 'meeting'}
 ]
-
+lesson5.each do |voc_hash|
+  voc_hash.each_pair do |key,value|
+    Vocabulary.create(word: key, traduction: value, lesson: Lesson.all[4])
+  end
+end
 lesson6=[
   {'rouge' => 'red'},
   {'bleu' => 'bleu'},
@@ -465,13 +481,21 @@ lesson6=[
   {'une voiture' => 'car'},
   {'un crayon' => 'pen'}
 ]
-
+lesson6.each do |voc_hash|
+  voc_hash.each_pair do |key,value|
+    Vocabulary.create(word: key, traduction: value, lesson: Lesson.all[5])
+  end
+end
 lesson7=[
   {'Indiquer' => 'to indicate / to tell'},
   {'pouvoir' => 'to can'},
   {"un mauvais sens de l’orientation" => "a bad sens of direction"}
 ]
-
+lesson7.each do |voc_hash|
+  voc_hash.each_pair do |key,value|
+    Vocabulary.create(word: key, traduction: value, lesson: Lesson.all[6])
+  end
+end
 lesson8 = [
   {'une nouvelle' => 'news'},
   {'un incendie' => 'fire'},
@@ -481,21 +505,8 @@ lesson8 = [
   {'personne' => 'nobody'},
   {'une personne' => 'someone'}
 ]
-
-voc_array = Array.new()
-voc_array << lesson1
-voc_array << lesson2
-voc_array << lesson3
-voc_array << lesson4
-voc_array << lesson5
-voc_array << lesson6
-voc_array << lesson7
-voc_array << lesson8
-
-voc_array.each do |lesson_voc|
-  lesson_voc.each do |voc_hash|
-    voc_hash.each_pair do |key,value|
-      Vocabulary.create(word: key, traduction: value, lesson: Lesson.all.sample)
-    end
+lesson8.each do |voc_hash|
+  voc_hash.each_pair do |key,value|
+    Vocabulary.create(word: key, traduction: value, lesson: Lesson.all[7])
   end
 end
