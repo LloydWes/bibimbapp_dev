@@ -54,32 +54,25 @@
 
 
 
-<div class="dropdown" style="padding-right: 20px">
-  <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <% if user_signed_in? && current_user.avatar != nil %>
-    <%= image_tag(current_user.avatar , alt: 'avatar', height: 50, width: 50, class: 'rounded-circle') if current_user.avatar.attached?  %>
-    <%= current_user.first_name %> <%= current_user.last_name %>
-    <% elsif user_signed_in? %>
-    <%= current_user.first_name %> <%= current_user.last_name %>
-    <%else%>
-    Sign_in/Sign_up
-    <% end %>
-  </button>
+<section class="sct-color-1">
+  <div class="container">
+    <div class="masonry-filter-menu link-menu link-menu--style-3 text-center">
+      <%= link_to "Show all", 'javascript:;', id: "levelAll", class: 'btn-filter default' %>
+      <!-- <a class="btn-filter default" id="levelAll">Show all</a> -->
+      <% @levels.each do |level| %>
+      <%= link_to "#{level.niveau} #{level.level_description}", 'javascript:;', id: "level#{level.niveau}" ,class: 'btn-filter' %>
+      <% end %>
+<!--         <a class="btn-filter" id="levelA1">A1 NEWBIE</a>
+      <a class="btn-filter" id="levelA2">A2 ELEMENTARY</a>
+       <a class="btn-filter" id="levelB1">B1 INTERMEDIATE</a>
+       <a class="btn-filter" id="levelB2">B2 ADVANCED</a> -->
+     </div>
+   </div>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <% if user_signed_in? %>
-    <% if user_signed_in? && current_user.is_admin? %>
-    <%= link_to 'Administration', admin_root_path, class: "dropdown-item text-danger", target: "_blank" %>
-    <% end %>
-    <%= link_to 'Profile', user_path(current_user.id), class: "dropdown-item" %>
-    <div class="dropdown-divider" role="presentation"></div>
-    <a class="dropdown-item" href="<%= destroy_user_session_path %>" data-method="DELETE">Logout</a>
-    <% else %>
-    <%= link_to 'Sign up', new_user_registration_path, class: "dropdown-item" %>
-    <%= link_to 'Login', new_user_session_path, class: "dropdown-item" %>
-    <% end %>
+   <div class="container mt-5">
+    <span class="delimiter delimiter--style-1"></span>
   </div>
-</div>
+</section>
 
 
 
@@ -95,24 +88,23 @@
   <div class="container">
     <div class="row cols-xs-space cols-sm-space cols-md-space card-flip-container">
 
-      <%= link_to "Show all", 'javascript:;', id: "levelAll", class: 'btn-filter default' %>
-      <!-- <a class="btn-filter default" id="levelAll">Show all</a> -->
-      <% @levels.each do |level| %>
-      <%= link_to "#{level.niveau} #{level.level_description}", 'javascript:;', id: "level#{level.niveau}" ,class: 'btn-filter' %>
-      <% end %>
-      <% if user_signed_in? %>
+
+
 
 
       <% @levels.order(niveau: :asc).each do |current_level| %>
       <% vocabularies_array = @vocabularies.select {|vocabulary| vocabulary.lesson.level == current_level} %>
       <div class="level<%= current_level.niveau %>">
+        <div class="col-wrapper--spaced text-center animate-on-scroll fadeInDown">
+          <div class="btn btn-base-4" style="pointer-events: none"><%= current_level.niveau %> <%= current_level.level_description %></div>
+        </div>
 
-        <% @vocabularies.each do |vocabulary| %>
+        <% vocabularies_array.each do |vocabulary| %>
         <div class="col-lg-4 mb-3">
           <div class="card-flip" data-flip-trigger="click">
             <div class="card-front">
               <div class="card-image">
-                <img src="https://images.pexels.com/photos/625219/pexels-photo-625219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                <%= image_tag("https://images.pexels.com/photos/625219/pexels-photo-625219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")%>
               </div>
               <div class="card-body card-body--overlay d-flex align-items-center">
                 <div class="card-body-inner text-center">
@@ -131,9 +123,10 @@
           </div>
         </div>
         <%end%>
-        <%end%>
+
 
       </div>
+      <%end%>
     </div>
   </div>
 
