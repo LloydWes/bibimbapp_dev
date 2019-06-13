@@ -1,0 +1,125 @@
+<div class="section-title section-title--style-2 text-center mb-4">
+  <h3 class="section-title-inner heading-2 strong-400">
+    <span>My vocabulary</span>
+  </h3>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $("#levelA1").click(function(){
+      $(".levelA2").hide();
+      $(".levelB1").hide();
+      $(".levelB2").hide();
+      $(".levelA1").show();
+    });
+  });
+
+  $(document).ready(function(){
+    $("#levelA2").click(function(){
+      $(".levelA1").hide();
+      $(".levelB1").hide();
+      $(".levelB2").hide();
+      $(".levelA2").show();
+    });
+  });
+
+  $(document).ready(function(){
+    $("#levelB1").click(function(){
+      $(".levelA1").hide();
+      $(".levelA2").hide();
+      $(".levelB2").hide();
+      $(".levelB1").show();
+    });
+  });
+
+  $(document).ready(function(){
+    $("#levelB2").click(function(){
+      $(".levelA1").hide();
+      $(".levelA2").hide();
+      $(".levelB1").hide();
+      $(".levelB2").show();
+    });
+  });
+
+  $(document).ready(function(){
+    $("#levelAll").click(function(){
+      $(".levelA1").show();
+      $(".levelA2").show();
+      $(".levelB1").show();
+      $(".levelB2").show();
+    });
+  });
+</script>
+
+
+<% if user_signed_in?%>
+
+<section class="sct-color-1">
+  <div class="container">
+    <div class="masonry-filter-menu link-menu link-menu--style-3 text-center">
+      <%= link_to "Show all", 'javascript:;', id: "levelAll", class: 'btn-filter default' %>
+      <!-- <a class="btn-filter default" id="levelAll">Show all</a> -->
+      <% @levels.each do |level| %>
+      <%= link_to "#{level.niveau} #{level.level_description}", 'javascript:;', id: "level#{level.niveau}" ,class: 'btn-filter' %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <span class="delimiter delimiter--style-1"></span>
+  </div>
+</section>
+
+
+<div class="text-center">
+  <h6><i class="fas fa-info-circle"></i> Click on the flash card to flip it and discover the translation</h6>
+</div>
+
+<% @levels.order(niveau: :asc).each do |current_level| %>
+<% vocabularies_array = @vocabularies.select {|vocabulary| vocabulary.lesson.level == current_level} %>
+<div class="level<%= current_level.niveau %>">
+  <div class="col-wrapper--spaced text-center animate-on-scroll fadeInDown">
+    <div class="btn btn-base-4" style="pointer-events: none"><%= current_level.niveau %> <%= current_level.level_description %></div>
+  </div>
+  <section class="slice sct-color-1">
+    <div class="container">
+      <div class="row cols-xs-space cols-sm-space cols-md-space card-flip-container">
+        <% vocabularies_array.each do |vocabulary| %>
+        <div class="col-lg-4 mb-3">
+          <div class="card-flip" data-flip-trigger="click">
+            <div class="card-front">
+              <div class="card-image">
+                <%= image_tag("https://images.pexels.com/photos/625219/pexels-photo-625219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")%>
+              </div>
+              <div class="card-body card-body--overlay d-flex align-items-center">
+                <div class="card-body-inner text-center">
+                  <h3 class="heading heading-inverse heading-3 strong-600 text-capitalize"><%= vocabulary.word %></h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-back bg-base-1">
+              <div class="card-body card-body--overlay d-flex align-items-center">
+                <div class="card-body-inner text-center">
+                  <%= link_to(vocabulary.traduction, lesson_path(vocabulary.lesson.id), class:"link link-sm link--style-4 link--bb text-uppercase ls-2 strong-600")%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%end%>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<%end%>
+
+<%else%>
+<div class="container mt-5 text-center">
+  <h1>You have to be connect to see this part ;)</h1>
+  <br>
+  <%= link_to("Sign in", new_user_session_path, class: "btn-lg btn-primary" )%>
+</div>
+<% end %>
