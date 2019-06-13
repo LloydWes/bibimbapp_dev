@@ -17,9 +17,7 @@
       <div class="container navbar-container">
         <!-- Brand/Logo -->
         <%= image_tag("logo/bibimbapp3.png", class:'img-fluid', id:'logo_index', alt:"") %>
-
-        <a href="<%= new_user_session_path %>" class="btn btn-styled btn-sm btn-white btn-outline text-uppercase" id="login_index">LOGIN</a>
-
+        <%= link_to 'LOGIN', new_user_session_path, class: "btn btn-styled btn-sm btn-white btn-outline text-uppercase", id: "login_index" %>
       </div>
 
     </nav>
@@ -47,7 +45,7 @@
 
         <div class="container">
           <section>
-            <a href="#" class="scroll-down" address="true"></a>
+            <span class="scroll-down" style="cursor: pointer" address="true"></span>
           </section>
         </div>
       </div>
@@ -213,7 +211,7 @@
       </div>
     </footer>
     <!-- SCRIPTS -->
-    <a href="#" class="back-to-top btn-back-to-top btn-style-4"></a>
+    <span class="back-to-top btn-back-to-top btn-style-4" style="cursor: pointer"></span>
     <%= javascript_include_tag 'application'%>
     <script type="text/javascript">
       $(function () {
