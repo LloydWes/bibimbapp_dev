@@ -52,7 +52,7 @@
 </script>
 
 
-
+<% if user_signed_in?%>
 
 <section class="sct-color-1">
   <div class="container">
@@ -62,10 +62,10 @@
       <% @levels.each do |level| %>
       <%= link_to "#{level.niveau} #{level.level_description}", 'javascript:;', id: "level#{level.niveau}" ,class: 'btn-filter' %>
       <% end %>
-     </div>
-   </div>
+    </div>
+  </div>
 
-   <div class="container mt-5">
+  <div class="container mt-5">
     <span class="delimiter delimiter--style-1"></span>
   </div>
 </section>
@@ -81,9 +81,9 @@
   <div class="col-wrapper--spaced text-center animate-on-scroll fadeInDown">
     <div class="btn btn-base-4" style="pointer-events: none"><%= current_level.niveau %> <%= current_level.level_description %></div>
   </div>
-<section class="slice sct-color-1">
-  <div class="container">
-    <div class="row cols-xs-space cols-sm-space cols-md-space card-flip-container">
+  <section class="slice sct-color-1">
+    <div class="container">
+      <div class="row cols-xs-space cols-sm-space cols-md-space card-flip-container">
         <% vocabularies_array.each do |vocabulary| %>
         <div class="col-lg-4 mb-3">
           <div class="card-flip" data-flip-trigger="click">
@@ -108,12 +108,18 @@
           </div>
         </div>
         <%end%>
-
-
       </div>
 
     </div>
   </div>
 
 </section>
-    <%end%>
+<%end%>
+
+<%else%>
+<div class="container mt-5 text-center">
+  <h1>You have to be connect to see this part ;)</h1>
+  <br>
+  <%= link_to("Sign in", new_user_session_path, class: "btn-lg btn-primary" )%>
+</div>
+<% end %>
