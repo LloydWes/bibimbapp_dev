@@ -62,10 +62,6 @@
       <% @levels.each do |level| %>
       <%= link_to "#{level.niveau} #{level.level_description}", 'javascript:;', id: "level#{level.niveau}" ,class: 'btn-filter' %>
       <% end %>
-<!--         <a class="btn-filter" id="levelA1">A1 NEWBIE</a>
-      <a class="btn-filter" id="levelA2">A2 ELEMENTARY</a>
-       <a class="btn-filter" id="levelB1">B1 INTERMEDIATE</a>
-       <a class="btn-filter" id="levelB2">B2 ADVANCED</a> -->
      </div>
    </div>
 
@@ -75,30 +71,19 @@
 </section>
 
 
-
-
-
-
-
 <div class="text-center">
   <h6><i class="fas fa-info-circle"></i> Click on the flash card to flip it and discover the translation</h6>
 </div>
 
+<% @levels.order(niveau: :asc).each do |current_level| %>
+<% vocabularies_array = @vocabularies.select {|vocabulary| vocabulary.lesson.level == current_level} %>
+<div class="level<%= current_level.niveau %>">
+  <div class="col-wrapper--spaced text-center animate-on-scroll fadeInDown">
+    <div class="btn btn-base-4" style="pointer-events: none"><%= current_level.niveau %> <%= current_level.level_description %></div>
+  </div>
 <section class="slice sct-color-1">
   <div class="container">
     <div class="row cols-xs-space cols-sm-space cols-md-space card-flip-container">
-
-
-
-
-
-      <% @levels.order(niveau: :asc).each do |current_level| %>
-      <% vocabularies_array = @vocabularies.select {|vocabulary| vocabulary.lesson.level == current_level} %>
-      <div class="level<%= current_level.niveau %>">
-        <div class="col-wrapper--spaced text-center animate-on-scroll fadeInDown">
-          <div class="btn btn-base-4" style="pointer-events: none"><%= current_level.niveau %> <%= current_level.level_description %></div>
-        </div>
-
         <% vocabularies_array.each do |vocabulary| %>
         <div class="col-lg-4 mb-3">
           <div class="card-flip" data-flip-trigger="click">
@@ -116,7 +101,7 @@
             <div class="card-back bg-base-1">
               <div class="card-body card-body--overlay d-flex align-items-center">
                 <div class="card-body-inner text-center">
-                  <a href="" class="link link-sm link--style-4 link--bb text-uppercase ls-2 strong-600"><%=vocabulary.traduction%></a>
+                  <%= link_to(vocabulary.traduction, lesson_path(vocabulary.lesson.id), class:"link link-sm link--style-4 link--bb text-uppercase ls-2 strong-600")%>
                 </div>
               </div>
             </div>
@@ -126,8 +111,9 @@
 
 
       </div>
-      <%end%>
+
     </div>
   </div>
 
 </section>
+    <%end%>
