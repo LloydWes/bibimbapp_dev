@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   # layout false, only: [:index]
-  before_action :authenticate_user!, only: [:cours]
+  before_action :authenticate_user!
 
   def index
     @lessons = Lesson.all
