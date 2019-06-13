@@ -103,8 +103,12 @@
             <div class="timeline-content border-0">
 
               <div class="icon-block icon-block--style-2-v2 text-center">
-                <a href="<%= lesson_path(lesson.id) %>"><div class='block-icon rounded'><i class='<%=lesson.icone%>'></i> </div>
-                <h2 class="heading heading-6 strong-600"><%= lesson.title %></h2></a>
+                <%=  link_to lesson_path(lesson.id) do %>
+                  <div class='block-icon rounded'>
+                    <i class='<%= lesson.icone%>'> </i>
+                    <h2 class="heading heading-6 strong-600"><%= lesson.title %></h2>
+                  </div>
+                <% end %>
                 <p class="px-2">
                 </p>
               </div>
