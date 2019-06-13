@@ -2,7 +2,6 @@
   <h3 class="section-title-inner heading-2 strong-400">
     <span>My Courses</span>
   </h3>
-
   <section class="slice sct-color-1">
     <div class="container">
       <div class="row justify-content-center">
@@ -10,9 +9,7 @@
           <div class="text-center">
             <div class="heading heading-2 strong-600 line-height-1_8">
               Are you ready to improve your French ?
-
             </div>
-
           </div>
         </div>
       </div>
@@ -20,7 +17,6 @@
   </section>
 
   <!-- CHOISIR AFFICHAGE NIVEAU -->
-
 
 <%= javascript_include_tag 'level_buttons'%>
 
@@ -31,10 +27,6 @@
         <% @levels.each do |level| %>
         <%= link_to "#{level.niveau} #{level.level_description}", 'javascript:;', id: "level#{level.niveau}" ,class: 'btn-filter' %>
         <% end %>
-<!--         <a class="btn-filter" id="levelA1">A1 NEWBIE</a>
-        <a class="btn-filter" id="levelA2">A2 ELEMENTARY</a>
-         <a class="btn-filter" id="levelB1">B1 INTERMEDIATE</a>
-         <a class="btn-filter" id="levelB2">B2 ADVANCED</a> -->
        </div>
      </div>
 
