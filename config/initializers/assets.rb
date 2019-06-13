@@ -10,6 +10,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.paths << Rails.root.join('lib')
 Rails.application.config.assets.paths << Rails.root.join('vendor')
 
+Rails.application.config.assets.precompile += ['btn_scroll_up.js']
 
 Rails.application.config.public_file_server.enabled = true
 # Precompile additional assets.
