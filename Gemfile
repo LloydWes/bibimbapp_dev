@@ -74,3 +74,4 @@ gem 'binding_of_caller'
 gem 'gravatar_image_tag'
 gem 'administrate'
 gem "aws-sdk-s3", require: false
+gem 'validates_timeliness', '~> 5.0.0.alpha3'

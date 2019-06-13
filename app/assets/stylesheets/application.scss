@@ -41,6 +41,7 @@
 #logo_index{
 width: 270px;
   padding: 30px;
+
 }
 
 
@@ -177,8 +178,15 @@ body {
 
 
 
+body{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
 
-
+.site-content{
+	flex: 1;
+}
 
 
 
@@ -248,12 +256,10 @@ a.bttn-dark {
 }
 
 
-// // FOOTER
-// footer {
-//     position: absolute;
-//     bottom: 0;
-//     width: 100%;
-//     height: 60px;
-//     background: #000000;
-//     color: #FFFFFF;
-// }
+
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
