@@ -90,7 +90,7 @@
   </section>
 
   <% @levels.order(niveau: :asc).each do |current_level| %>
-  <% lessons_array = Lesson.where(level_id: current_level.id) %>
+  <% lessons_array = @lessons.select {|lesson| lesson.level == current_level} %>
   <div class="level<%= current_level.niveau %>">
     <div class="col-wrapper--spaced text-center animate-on-scroll fadeInDown">
       <div class="btn btn-base-4" style="pointer-events: none"><%= current_level.niveau %> <%= current_level.level_description %></div>
@@ -117,5 +117,3 @@
     </section>
   </div>
   <% end %>
-
-
