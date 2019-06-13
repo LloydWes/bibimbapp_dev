@@ -194,15 +194,6 @@
     <!-- SCRIPTS -->
     <span class="back-to-top btn-back-to-top btn-style-4" style="cursor: pointer"></span>
     <%= javascript_include_tag 'application'%>
-    <script type="text/javascript">
-      $(function () {
-        $('.scroll-down').click(function () {
-          $('html, body').animate({
-            scrollTop: $('section.ok').offset().top
-          }, 'slow');
-          return false;
-        });
-      });
-    </script>
+    <%= javascript_include_tag 'btn_scroll_up'%>
   </body>
 </html>
