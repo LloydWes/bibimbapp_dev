@@ -26,7 +26,14 @@
         <div class="col-lg-5 mb-5">
           <div class="block block-image-holder">
             <div class="block-image">
+
+              <% if @lesson.media != nil %>
+
+              <%= image_tag(@lesson.media, alt: 'media',  class: "img-fluid img-center") %>
+              <%else%>
                 <%= image_tag("https://images.unsplash.com/photo-1494249465471-5655b7878482?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80", class: "img-fluid img-center") %>
+              <% end %>
+
             </div>
           </div>
         </div>
@@ -104,7 +111,12 @@
         <div class="col-lg-5 mb-5">
           <div class="block block-image-holder">
             <div class="block-image">
-              <%= image_tag("https://images.unsplash.com/photo-1543332164-6e82f355badc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80", class: "img-fluid img-center" ) %>
+              <% if @lesson.media2 != nil %>
+
+              <%= image_tag(@lesson.media2, alt: 'media',  class: "img-fluid img-center") %>
+              <%else%>
+                <%= image_tag("https://images.unsplash.com/photo-1543332164-6e82f355badc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80", class: "img-fluid img-center") %>
+              <% end %>
             </div>
           </div>
         </div>
