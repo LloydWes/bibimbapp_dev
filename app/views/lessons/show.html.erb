@@ -26,14 +26,11 @@
         <div class="col-lg-5 mb-5">
           <div class="block block-image-holder">
             <div class="block-image">
-
               <% if @lesson.media != nil %>
-
               <%= image_tag(@lesson.media, alt: 'media',  class: "img-fluid img-center") %>
               <%else%>
                 <%= image_tag("https://images.unsplash.com/photo-1494249465471-5655b7878482?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80", class: "img-fluid img-center") %>
               <% end %>
-
             </div>
           </div>
         </div>
@@ -49,9 +46,9 @@
                 <h3 class="heading heading-4 strong-600">
 
                 SCRIPT</h3>
-                <p>
-                  <%= @lesson.script %>
-                </p>
+
+                <p style="white-space: pre-line"><%= @lesson.script %></p>
+
               </div>
             </div>
           </div>
@@ -71,9 +68,7 @@
             <h3 class="heading heading-4 strong-600">
 
             GRAMMAR</h3>
-            <p>
-              <%= @lesson.grammar %>
-            </p>
+              <p style="white-space: pre-line"><%= @lesson.grammar %></p>
           </div>
         </div>
       </div>
@@ -112,7 +107,6 @@
           <div class="block block-image-holder">
             <div class="block-image">
               <% if @lesson.media2 != nil %>
-
               <%= image_tag(@lesson.media2, alt: 'media',  class: "img-fluid img-center") %>
               <%else%>
                 <%= image_tag("https://images.unsplash.com/photo-1543332164-6e82f355badc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80", class: "img-fluid img-center") %>
