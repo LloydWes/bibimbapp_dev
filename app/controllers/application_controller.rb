@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_devise_parameters, if: :devise_controller?
 
   def configure_devise_parameters
-    puts "*"*20, params, "*"*20
+    # puts "*"*20, params, "*"*20
     # if params[:user][:date_of_birth] != nil
     # if params[:user][:date_of_birth]#.method_defined? :to_date
     if params['controller'] == 'devise/registrations'
@@ -16,7 +16,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up) {|u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation, :date_of_birth, :gender)}
     # devise_parameter_sanitizer.permit(:sign_up) {|u| u.permit(:first_name, :last_name, :is_alive, :email, :password, :password_confirmation, :avatar, :birthday)}
     devise_parameter_sanitizer.permit(:account_update) {|u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password, :date_of_birth, :gender, :avatar, :i_sadmin?, :level_id)}
-
   end
 
   protected
