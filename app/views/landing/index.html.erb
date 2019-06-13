@@ -18,18 +18,20 @@
         <!-- Brand/Logo -->
         <%= image_tag("logo/bibimbapp3.png", class:'img-fluid', id:'logo_index', alt:"") %>
 
-        <a href="<%= new_user_session_path %>" class="btn btn-styled btn-sm btn-white btn-outline text-uppercase" id="login_index">LOGIN</a>
 
-      </div>
+      <a href="<%= new_user_session_path %>" class="btn btn-styled btn-sm btn-white btn-outline text-uppercase" id= "login_index">LOGIN</a>
 
-    </nav>
+    </div>
+
+
+  </nav>
 
     <!-- BACKGROUND VIDEO -->
 
     <div class="video-header wrap">
       <div class="fullscreen-video-wrap">
         <div class="video-container">
-          <video class="video" src="/assets/backgrounds/slider/video_V6.mp4" autoplay="autoplay" loop="loop"></video>
+        <video class="video" src="<%= asset_path('backgrounds/slider/video_V6.mp4') %>" autoplay="autoplay" playsinline autoplay muted loop loop="loop"></video>
         </div>
       </div>
 
@@ -139,8 +141,9 @@
             </div>
           </div>
 
-          <div class="col-lg-6">
-            <img src="/assets/backgrounds/slider/rue.jpeg" class="img-fluid img-center">
+        <div class="col-lg-6">
+          <img src="<%= asset_path('backgrounds/slider/rue.jpeg')%>" class="img-fluid img-center">
+
           </div>
         </div>
       </div>
@@ -148,20 +151,20 @@
 
     <!-- NUMBERS -->
 
-    <section class="slice-lg sct-color-1 mt-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <img src="/assets/backgrounds/slider/toits2.jpeg" class="img-fluid img-center">
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="milestone-counter">
-              <span class="milestone-delimiter"></span>
-              <div class="milestone-count c-gray-dark strong-600" data-from="0" data-to="9980" data-speed="30000" data-refresh-interval="100"></div>
-              <h4 class="milestone-info heading-5 c-gray-dark strong-500 text-normal">Students</h4>
-              <p class="mt-3">
-                Lot of people enjoy take our classes. Everyday more people join our community.
-              </p>
+  <section class="slice-lg sct-color-1 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <img src="<%= asset_path('backgrounds/slider/toits2.jpeg') %>" class="img-fluid img-center">
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="milestone-counter">
+            <span class="milestone-delimiter"></span>
+            <div class="milestone-count c-gray-dark strong-600" data-from="0" data-to="9980" data-speed="30000" data-refresh-interval="100"></div>
+            <h4 class="milestone-info heading-5 c-gray-dark strong-500 text-normal">Students</h4>
+            <p class="mt-3">
+              Lot of people enjoy take our classes. Everyday more people join our community.
+            </p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
@@ -211,6 +214,10 @@
           </div>
         </div>
       </div>
+    </div>
+  </footer>
+
+
     </footer>
     <!-- SCRIPTS -->
     <a href="#" class="back-to-top btn-back-to-top btn-style-4"></a>
