@@ -1,0 +1,21 @@
+/*
+*
+*= require_self
+*/
+
+div.list-group-item{
+	border: none;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+.correct{
+	background-color: lightgreen;
+}
+.incorrect{
+	background-color: rgba(151,20,10,1);
+	color: white;
+}
+.correct_but_not_selected{
+	border: 1px solid lightgreen !important;
+	box-shadow: 0px 0px 2px lightgreen;
+}

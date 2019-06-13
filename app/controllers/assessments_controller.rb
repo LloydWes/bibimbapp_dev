@@ -1,17 +1,17 @@
 class AssessmentsController < ApplicationController
  before_action :authenticate_user!
 
-  def index
-  end
+ def index
+ end
 
-  def new
-    # puts "*"*60, params.inspect, "*"*60
-    @questions = Assessment.where(lesson_id: params[:lesson_id]).first.assessment_questions
-    @attempt_n = getAttemptNumber(Assessment.last.id)
+ def new
+  puts "*"*60, params.inspect, "*"*60
+  @questions = Assessment.where(lesson_id: params[:lesson_id]).first.assessment_questions
+  @attempt_n = getAttemptNumber(Assessment.last.id)
 
-  end
+end
 
-  def create
+def create
     # puts "*"*60, params.inspect
     assessment_id = nil
     assessment_answers = Array.new()
@@ -89,20 +89,31 @@ class AssessmentsController < ApplicationController
 
   def show
     # Make sure the user passed the test he is trying to view
-    puts "","","",""
-    puts "SSSSSSSSSSSSSSSHHHHHHHHHHHHHHHHHHOOOOOOOOOOOOOOOOOOOOWWWWWWWWWW"
-    puts "","","",""
 
-    # Get the users
+    # Get the attempt number
     @attempt = getAttemptNumber(params[:id])
-    @questions = Assessment.find(params[:id]).assessment_questions
+
+    # Get the correct assessment
+    assessment = Assessment.find(params[:id])
+    # Get the correct assessments questions
+    @questions = assessment.assessment_questions
+
+    # Get the correct options (actually useless)
+    # @options = Array.new()
+    # @questions.each do |question|
+    #   @options << question.assessments_options
+    # end
+
+    # Get the correct answers
     @answers = AssessmentAnswer.where(assessment_id: params[:id], user_id: current_user.id, attempt_number: params[:attempt])
+    
+
   end
 
   private
 
-  def attempt_limit 
-  end
+  # def attempt_limit 
+  # end
 
   #Make it a helper
   def getAttemptNumber(assessment_id)
@@ -120,4 +131,5 @@ class AssessmentsController < ApplicationController
       0
     end
   end
+
 end
