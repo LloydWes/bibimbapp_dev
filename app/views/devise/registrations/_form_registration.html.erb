@@ -30,6 +30,7 @@
                       </div>
                     </div>
                     <div>
+                      <%= f.label :level_id, 'Level choice'%>
                       <%= f.select(:level_id) do %>
                         <% Level.all.each do |l| -%>
                           <%= content_tag(:option, l.niveau, value: l.id) %>
