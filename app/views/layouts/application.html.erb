@@ -13,9 +13,20 @@
     <link rel="icon" type="image/png" href="<%= asset_path('presentation/favicon.png')%>" />
   </head>
     <body>
+      <div class="head">
+
     <%= render 'layouts/header' %>
     <%= render 'layouts/flash'%>
-    <%= yield %>
+
+  </div>
+    <div class="site-content">
+
+      <%= yield %>
+    </div>
+    <div class="foot">
+
     <%= render 'layouts/footer'%>
+
+  </div>
   </body>
 </html>
