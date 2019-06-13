@@ -1,8 +1,7 @@
 <!-- LESSON NAME -->
 <div class="section-title section-title--style-1 text-center mb-2">
   <h3 class="section-title-inner text-normal mt-5">
-    <span><%= @lesson.level.niveau %>, LEÇON
-      <%= @lesson.order %></span>
+    <span><%= @lesson.level.niveau %>, LEÇON <%= @lesson.order %></span>
   </h3>
   <h4><%= @lesson.title %></h4>
 
@@ -14,24 +13,10 @@
 <div class="fluid-paragraph text-center">
   <p class="text-lg line-height-1_8 c-gray-light strong-300">
     <i class="fas fa-crosshairs"></i>
-    <p style="white-space: pre-line"><%= @lesson.description %></p>
-  </div>
+    <%= @lesson.description %>
+  </p>
+</div>
 
-<<<<<<< HEAD
-  <section class="slice sct-color-1">
-
-    <!-- BLOCK IMAGE -->
-    <div class="container">
-      <div class="col lg-12 mb-3">
-        <div class="row row justify-content-between">
-          <div class="col-lg-5 mb-5">
-            <div class="block block-image-holder">
-              <div class="block-image">
-                <a href="#">
-                  <img src="https://images.unsplash.com/photo-1494249465471-5655b7878482?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" class="img-fluid img-center">
-                </a>
-              </div>
-=======
 <section class="slice sct-color-1">
 
   <!-- BLOCK IMAGE -->
@@ -41,78 +26,81 @@
         <div class="col-lg-5 mb-5">
           <div class="block block-image-holder">
             <div class="block-image">
+              <% if @lesson.media != nil %>
+              <%= image_tag(@lesson.media, alt: 'media',  class: "img-fluid img-center") %>
+              <%else%>
                 <%= image_tag("https://images.unsplash.com/photo-1494249465471-5655b7878482?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80", class: "img-fluid img-center") %>
->>>>>>> development
-            </div>
-          </div>
-
-          <!-- BLOCK SCRIPT -->
-          <div class="col-md-7 col-sm-12">
-            <div class="feature feature--boxed-border feature--bg-1">
-              <div class="icon-block icon-block--style-1-v2">
-                <div class="block-icon text-xs-left">
-                  <i class="fas fa-book-reader"></i>
-                </div>
-                <div class="block-content">
-                  <h3 class="heading heading-4 strong-600">
-
-                    SCRIPT</h3>
-                  <p style="white-space: pre-line"><%= @lesson.script %></p>
-                </div>
-              </div>
+              <% end %>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- BLOCK GRAMMAIRE -->
+        <!-- BLOCK SCRIPT -->
+        <div class="col-md-7 col-sm-12">
+          <div class="feature feature--boxed-border feature--bg-1">
+            <div class="icon-block icon-block--style-1-v2">
+              <div class="block-icon text-xs-left">
+                <i class="fas fa-book-reader"></i>
+              </div>
+              <div class="block-content">
+                <h3 class="heading heading-4 strong-600">
 
-      <div class="col-md-12 col-sm-12 mb-5">
-        <div class="feature feature--boxed-border feature--bg-1">
-          <div class="icon-block icon-block--style-1-v2">
-            <div class="block-icon text-xs-left">
-              <i class="fas fa-chalkboard-teacher"></i>
-            </div>
-            <div class="block-content">
-              <h3 class="heading heading-4 strong-600">
-
-                GRAMMAR</h3>
-
-              <p style="white-space: pre-line"><%= @lesson.grammar %></p>
-
+                SCRIPT</h3>
+                <p>
+                  <%= @lesson.script %>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- IMAGE BLOCK 2 -->
+    <!-- BLOCK GRAMMAIRE -->
 
-    <div class="container">
-      <div class="col lg-12 mb-3">
-        <div class="row row justify-content-between">
+    <div class="col-md-12 col-sm-12 mb-5">
+      <div class="feature feature--boxed-border feature--bg-1">
+        <div class="icon-block icon-block--style-1-v2">
+          <div class="block-icon text-xs-left">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <div class="block-content">
+            <h3 class="heading heading-4 strong-600">
 
-          <!-- VOCABULARY BLOCK -->
-          <div class="col-md-7 col-sm-12">
-            <div class="feature feature--boxed-border feature--bg-1">
-              <div class="icon-block icon-block--style-1-v2">
-                <div class="block-icon text-xs-left">
-                  <i class="fas fa-sort-alpha-up"></i>
-                </div>
+            GRAMMAR</h3>
+            <p>
+              <%= @lesson.grammar %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                <div class="block-content">
-                  <h3 class="heading heading-4 strong-600">
+  <!-- IMAGE BLOCK 2 -->
 
-                    VOCABULARY</h3>
-                  <p>
-                    <% @lesson.vocabularies.each do |vocabulary| %>
-                      <%= vocabulary.word %>
-                      =
-                      <%= vocabulary.traduction %><br>
-                    <% end %>
-                  </p>
+  <div class="container">
+    <div class="col lg-12 mb-3">
+      <div class="row row justify-content-between">
 
-                </div>
+        <!-- VOCABULARY BLOCK -->
+        <div class="col-md-7 col-sm-12">
+          <div class="feature feature--boxed-border feature--bg-1">
+            <div class="icon-block icon-block--style-1-v2">
+              <div class="block-icon text-xs-left">
+                <i class="fas fa-sort-alpha-up"></i>
+              </div>
+
+              <div class="block-content">
+                <h3 class="heading heading-4 strong-600">
+
+                VOCABULARY</h3>
+                <p>
+                  <% @lesson.vocabularies.each do |vocabulary| %>
+                  <%= vocabulary.word %> = <%= vocabulary.traduction %><br>
+                  <% end %>
+                </p>
+
               </div>
             </div>
           </div>
@@ -120,35 +108,38 @@
         <div class="col-lg-5 mb-5">
           <div class="block block-image-holder">
             <div class="block-image">
-              <%= image_tag("https://images.unsplash.com/photo-1543332164-6e82f355badc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80", class: "img-fluid img-center" ) %>
+              <% if @lesson.media2 != nil %>
+              <%= image_tag(@lesson.media2, alt: 'media',  class: "img-fluid img-center") %>
+              <%else%>
+                <%= image_tag("https://images.unsplash.com/photo-1543332164-6e82f355badc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80", class: "img-fluid img-center") %>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-    </section>
-    <section class='container'>
-      <p>
-        <% if @lesson.assessments.length > 0 %>
-          <% if @number_of_attempts == 0 || @number_of_attempts == nil%>
-            Vous n'avez pas encore passé ce test
-          <% else %>
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Vous avez passé ce test
-                <%= @number_of_attempts %>
-                fois.
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <% @assessment_attempts.each do |attempt| %>
-                  <%= link_to "Visualiser l'essai n°#{attempt.first.attempt_number}", show_lesson_assessment_path(attempt.first.assessment.lesson.id, attempt.first.assessment.id, attempt.first.attempt_number), class: 'dropdown-item' %>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        </p>
-        <%= link_to "Passer le test", new_lesson_assessment_path(@lesson.id, @lesson.assessments.first.id), class: 'btn btn-success' %>
+  </section>
+  <section class='container'>
+    <p>
+      <% if @lesson.assessments.length > 0 %>
+      <% if @number_of_attempts == 0 || @number_of_attempts == nil%>
+      Vous n'avez pas encore passé ce test
       <% else %>
-        Aucun test n'est disponible pour cette leçon.
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Vous avez passé ce test <%= @number_of_attempts %> fois.
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <% @assessment_attempts.each do |attempt| %>
+          <%= link_to "Visualiser l'essai n°#{attempt.first.attempt_number}", show_lesson_assessment_path(attempt.first.assessment.lesson.id, attempt.first.assessment.id, attempt.first.attempt_number), class: 'dropdown-item' %>
+          <% end %>
+          </div>
+        </div>
+        <% end %>
+      </p>
+      <%= link_to "Passer le test", new_lesson_assessment_path(@lesson.id, @lesson.assessments.first.id), class: 'btn btn-success' %>
+      <% else %>
+      Aucun test n'est disponible pour cette leçon.
       <% end %>
     </section>
