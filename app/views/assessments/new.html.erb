@@ -1,4 +1,5 @@
-<div class="container border border-primary">
+<% if @questions != nil %>
+<div class="container border">
 	<form action='<%= lesson_assessments_path %>' method="post">
 		<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
 		<input type='hidden' value='<%= @questions.first.assessment.id %>' name='assessment_id_<%= @questions.first.assessment.id %>'>
@@ -18,25 +19,9 @@
 		<input type='submit' value='Envoyer !' class='btn btn-success mb-3'>
 	</form>
 </div>
+<% else %>
+<p>Oups on dirait que vous avez atteri ici par erreur :(</p>
+<% end %>
 
-<script type="text/javascript">
-	$(function(){
-		$('input[type~="radio"]').css('visibility', 'hidden');
 
-		$('a[class~="list-group-item-action"]').css('cursor', 'pointer');
-
-		$('input[type="radio"]').each(function(index, value){
-			if($(this).prop('checked')){
-				$(this).parent().toggleClass('active');
-			}
-		});
-		$('a[class~="list-group-item-action"]').click(function(e){
-			console.log(this);
-			let question_id = $('input[type="radio"]', this).attr('name');
-			console.log(question_id);
-			$(`a[class~="active"] input[name=${question_id}]`).parent().toggleClass('active');
-			$(this).toggleClass('active');
-			$('a[class~="active"] input').prop('checked', true);
-		});
-	});
-</script>
+<%= javascript_include_tag 'assessment_new.js', type: 'text/javascript'%>

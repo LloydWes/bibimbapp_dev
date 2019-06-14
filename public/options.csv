@@ -1,0 +1,321 @@
+question_id,letter,answer
+1,a,Oui et toi ?
+1,b,Ça va ?
+1,c,Salut ?
+1,d,Comment allez-vous ?
+2,a,bonjour 
+2,b,quoi de neuf ?
+2,c,coucou 
+2,d,ça va 
+3,a,ça va ? 
+3,b,enchanté
+3,c,bonsoir 
+3,d,comment allez-vous ?
+4,a,salut 
+4,b,bonsoir 
+4,c,enchanté
+4,d,ça va ? 
+5,a,bonjour 
+5,b,ça va 
+5,c,comment allez-vous ?
+5,d,coucou 
+6,a,quoi de neuf ?
+6,b,salut 
+6,c,ça va 
+6,d,comment allez-vous ?
+7,a,bonsoir 
+7,b,quoi de neuf ?
+7,c,coucou 
+7,d,bonsoir 
+8,a,enchanté
+8,b,ça va ? 
+8,c,bonjour 
+8,d,ça va ? 
+9,a,bonsoir 
+9,b,coucou 
+9,c,bonjour 
+9,d,salut 
+10,a,enchanté
+10,b,comment allez-vous ?
+10,c,quoi de neuf ?
+10,d,enchanté
+11,a,je suis désolé
+11,b,ici
+11,c,pardon
+11,d,descendre 
+12,a,metro
+12,b,veuillez +  verb 
+12,c,je vous demande pardon?
+12,d,pardon
+13,a,je suis désolé
+13,b,metro
+13,c,ici
+13,d,veuillez +  verb 
+14,a,pardon
+14,b,descendre 
+14,c,metro
+14,d,je vous demande pardon?
+15,a,je suis désolé
+15,b,ici
+15,c,pardon
+15,d,veuillez +  verb 
+16,a,descendre 
+16,b,metro
+16,c,je vous demande pardon?
+16,d,je suis désolé
+17,a,ici
+17,b,pardon
+17,c,veuillez +  verb 
+17,d,descendre 
+18,a,je vous demande pardon?
+18,b,pardon
+18,c,je suis désolé
+18,d,bonsoir 
+19,a,enchanté
+19,b,ça va ? 
+19,c,veuillez +  verb 
+19,d,descendre 
+20,a,pardon
+20,b,ici
+20,c,descendre 
+20,d,veuillez +  verb 
+21,a,article
+21,b,manger
+21,c,aimer
+21,d,bien
+22,a,faire
+22,b,vélo
+22,c,théâtre 
+22,d,pendant
+23,a,J’ai … ans
+23,b,photography
+23,c,étudier
+23,d,par
+24,a,lire
+24,b,I like
+24,c,temps libre
+24,d,J’aime beaucoup
+25,a,Je m’appelle 
+25,b,faire du vélo
+25,c,Je suis allé en + somewhere / J’ai été en + somewhere
+25,d,voyage
+26,a,article
+26,b,manger
+26,c,aimer
+26,d,bien
+27,a,faire
+27,b,vélo
+27,c,théâtre 
+27,d,pendant
+28,a,J’ai … ans
+28,b,photography
+28,c,étudier
+28,d,par
+29,a,lire
+29,b,j'aime
+29,c,temps libre
+29,d,J’aime beaucoup
+30,a,vélo
+30,b,Je m’appelle 
+30,c,article
+30,d,aimer
+31,a,pas assez
+31,b,Moi aussi
+31,c,vrai
+31,d,je trouve que
+32,a,à mon avis
+32,b,écologie
+32,c,devoir
+32,d,j’ai l’impression que
+33,a,De mon point de vue
+33,b,davantage
+33,c,selon moi 
+33,d,écologie
+34,a,je pense que
+34,b,Moi aussi
+34,c,vrai
+34,d,pas assez
+35,a,j’ai l’impression que
+35,b,devoir
+35,c,je trouve que
+35,d,à mon avis
+36,a,je pense que
+36,b,De mon point de vue
+36,c,à mon avis
+36,d,vrai
+37,a,devoir
+37,b,Moi aussi
+37,c,pas assez
+37,d,davantage
+38,a,j’ai l’impression que
+38,b,selon moi 
+38,c,pas assez
+38,d,Moi aussi
+39,a,vrai
+39,b,davantage
+39,c,à mon avis
+39,d,je pense que
+40,a,De mon point de vue
+40,b,Moi aussi
+40,c,je pense que
+40,d,j’ai l’impression que
+41,a,un/une collègue
+41,b,un bureau
+41,c,une idée
+41,d,un patron
+42,a,un boulot
+42,b,avoir de la chance
+42,c,prendre des jours
+42,d,collègues de bureau
+43,a,téléphoner
+43,b,la mer
+43,c,un projet
+43,d,un client
+44,a,la grève
+44,b,sans doute
+44,c,partir à la mer
+44,d,un mail / un courriel
+45,a,demain
+45,b,la fin
+45,c,la semaine
+45,d,venir
+46,a,après-midi
+46,b,une réunion
+46,c,prendre des jours
+46,d,après-midi
+47,a,travailler
+47,b,un client
+47,c,un bureau
+47,d,la semaine
+48,a,la grève
+48,b,venir
+48,c,un boulot
+48,d,un/une collègue
+49,a,demain
+49,b,une idée
+49,c,travailler à distance / télétravail
+49,d,une réunion
+50,a,un bureau
+50,b,collègues de bureau
+50,c,prendre des jours
+50,d,un client
+51,a,gris
+51,b,jaune
+51,c,bleu
+51,d,un pantalon
+52,a,une voiture
+52,b,un crayon
+52,c,marron
+52,d,verte 
+53,a,oranges
+53,b,grise
+53,c,jeune
+53,d,vertes
+54,a,bleues
+54,b,rouges
+54,c,marrons
+54,d,jaunes
+55,a,rougees
+55,b,violet
+55,c,rose
+55,d,verts
+56,a,orange
+56,b,bleu
+56,c,rouges
+56,d,rougees
+57,a,violet
+57,b,verte 
+57,c,un pantalon
+57,d,grise
+58,a,rouge
+58,b,oranges
+58,c,jeune
+58,d,gris
+59,a,marron
+59,b,un crayon
+59,c,noirs
+59,d,marrons
+60,a,jaune
+60,b,un crayon
+60,c,bleues
+60,d,verts
+61,a,enchanté
+61,b,un bon sens de l'orientation
+61,c,vouloir
+61,d,Derien
+62,a,indiquer
+62,b,individu
+62,c,De rien
+62,d,je souhaiterais
+63,a,inciter
+63,b,un mauvais sens de l'orientation
+63,c,pariez-vous
+63,d,pouvoir
+64,a,pourriez-vous 
+64,b,De rien
+64,c,pourriez-vous 
+64,d,parlez-vous 
+65,a,je souhaiterais
+65,b,De rien
+65,c,indiquer
+65,d,coucou 
+66,a,bonjour 
+66,b,De rien
+66,c,inciter
+66,d,un mauvais sens de l'orientation
+67,a,verts
+67,b,jaunes
+67,c,indiquer
+67,d,bleues
+68,a,verts
+68,b,enchanté
+68,c,un bon sens de l'orientation
+68,d,vouloir
+69,a,Derien
+69,b,pourriez-vous 
+69,c,théâtre 
+69,d,bien
+70,a,photography
+70,b,indiquer
+70,c,davantage
+70,d,travailler
+71,a,une nouvelle
+71,b,un incendie
+71,c,blessé
+71,d,un journaliste
+72,a,découvert
+72,b,personne
+72,c,une personne
+72,d,J'espère que...
+73,a,la police
+73,b,annoncer
+73,c,Que s'est-il passé ?
+73,d,Qu'est-il arrivé ?
+74,a,Que s'est-il passé ?
+74,b,blessé
+74,c,une personne
+74,d,J'espère que...
+75,a,une nouvelle
+75,b,personne
+75,c,un incendie
+75,d,annoncer
+76,a,découvert
+76,b,Qu'est-il arrivé ?
+76,c,un journaliste
+76,d,la police
+77,a,annoncer
+77,b,un incendie
+77,c,rouge
+77,d,inciter
+78,a,une personne
+78,b,personne
+78,c,une nouvelle
+78,d,à mon avis
+79,a,davantage
+79,b,pas assez
+79,c,un incendie
+79,d,une nouvelle
+80,a,J'espère que...
+80,b,vouloir
+80,c,bien
+80,d,je souhaiterais

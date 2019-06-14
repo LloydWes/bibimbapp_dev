@@ -17,9 +17,6 @@
                     </div>
                   </div>
 
-                  <p><%= f.label :date_of_birth %><br />
-                  <%= f.text_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", "data-provide" => 'datepicker', class: "form-control form-control-lg datepicker" %></p><br />
-
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
@@ -42,10 +39,10 @@
                   <div class="form-group">
                     <%if @user.avatar.attached?%>
                       <%= image_tag @user.avatar, alt: 'avatar', height: 80, width: 80, class: 'rounded-circle' %>
-                      <%= f.file_field :avatar, id: "file-4", class: "custom-input-file custom-input-file--4" %>
+                      <%= f.file_field :avatar, id: "file-4", class: "custom-input-file custom-input-file--4", remote: true %>
                     <%else%>
                       <p>No avatar</p>
-                      <%= f.file_field :avatar, id: "file-4", class: "custom-input-file custom-input-file--4" %>
+                      <%= f.file_field :avatar, id: "file-4", class: "custom-input-file custom-input-file--4", remote: true %>
                     <%end%>
                     <label for="file-4">
                             <span></span>

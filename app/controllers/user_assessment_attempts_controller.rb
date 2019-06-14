@@ -1,3 +1,0 @@
-class UserAssessmentAttemptsController < ApplicationController
-
-end
