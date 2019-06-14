@@ -14,28 +14,43 @@ Sur heroku :
 * [Bibimbapp (développement)](https://dev-bibimbapp.herokuapp.com/)
 * [Bibimbapp (production)](https://prod-bibimbapp.herokuapp.com/)
 
+## Vidéo de présentation : 
+https://vimeo.com/342204480
+mot de passe : `thp`
 
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 📋 Salut !
 
-Things you may want to cover:
+Notre projet final est un site d'apprentissage du français pour les étrangers.
+Le plateforme nécéssite une inscription, à la suite de laquelle l'utilisateur recevra un courriel de bienvenue (ouais on dit courriel).
+Par la suite il pourra accéder aux cours et aux quiz, et progresser en fonction de son niveau initial.
 
-* Ruby version
 
-* System dependencies
+## 🔥 Les gems utilisées :
 
-* Configuration
+* `font awesome` pour intégrer des icones qui claquent
+* `devise` pour les login / signup etc..
+* `thredded` pour le forum 
+* `administrate` pour le dashboard admin
+* `AWS S3`, liée à L'API du même nom : stockage d'images et de fichiers
 
-* Database creation
+## 👑 Pour se connecter en admin : 
+user : `jean.dupont@yopmail.com`
+mot de passe : `password`
 
-* Database initialization
+## Le forum (gem thredded)
 
-* How to run the test suite
+* l'accès se fait en étant déjà connecté
+* la consultation du forum est possible pour les visiteurs
+* l'administrateur et uniquement lui, peut ajouter des messages boards (sorte de catégories)
+* un utilisateur authentifié peut ajouter un topic (sujet) et/ou un post (contenu d'un sujet/message)
+* la déconnection du forum est lié à Devise et donc déconnecte du site (retour vers la landing page)
+* Le retour vers le site se fait par onglet
 
-* Services (job queues, cache servers, search engines, etc.)
+[Tuto-démo du forum](https://thredded.org/thredded/)
 
-* Deployment instructions
+## Dashboard Administration (gem administrate)
 
-* ...
+* `jean.dupont@yopmail.com` est administrateur et peut accéder à cette partie
+* les users, lessons, levels et quizz (assessments) sont gérables par ce dashboard
+
