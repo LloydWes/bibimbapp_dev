@@ -49,6 +49,7 @@ def create
 
     #Assessment_anwsers is an array, each case contains a hash {question_id => option_id}
     correct = nil
+    number_of_correct_answer = 0
     assessment_answers.each do |pair|
       pair.each_pair do |key, value|
         question = AssessmentQuestion.find(key.to_i)
@@ -63,6 +64,7 @@ def create
       # Check if the answer is correct
       if option.letter == question.correct_letter
         correct = true
+        number_of_correct_answer += 1
       else
         puts 'EEEEEEEEEEELLLLLLLLLLLLLLLLLLLLLLLLLLSSSSSSSSSSSSSSSSSSSSSSSSSSSEEEEEEEEEEEEEEEEEEEEEEEEEEEEE'
         correct = false
@@ -85,6 +87,17 @@ def create
       end
 
     end
+      # Create result entry
+      number_of_questions = assessment_answers.length
+      score =  ((number_of_correct_answer.to_f / number_of_questions.to_f) * 100).to_i
+      puts "#"*20, number_of_correct_answer, number_of_questions, score
+      is_past = false
+      score >= 80 ? is_past = true : false
+      begin
+        Result.create!(is_past?: is_past, score: score, date_exam: Date.today, lesson_id: params[:lesson_id], user_id: current_user.id)
+      rescue ActiveRecord::RecordInvalid => e
+        puts "Error: #{e}", correct
+      end
 
     # redirect_to 'user_assessment_attempt#show' with proper parameters to display the results
     redirect_to controller: 'assessments', action: 'show', lesson_id: Assessment.find(assessment_id).lesson.id, id: assessment_id, attempt: attempt
