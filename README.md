@@ -38,3 +38,20 @@ Par la suite il pourra accéder aux cours et aux quiz, et progresser en fonction
 user : `jean.dupont@yopmail.com`
 mot de passe : `password`
 
+
+## Le forum (gem thredded)
+
+* l'accès se fait en étant déjà connecté
+* la consultation du forum est possible pour les visiteurs
+* l'administrateur et uniquement lui, peut ajouter des messages boards (sorte de catégories)
+* un utilisateur authentifié peut ajouter un topic (sujet) et/ou un post (contenu d'un sujet/message)
+* la déconnection du forum est lié à Devise et donc déconnecte du site (retour vers la landing page)
+* Le retour vers le site se fait par onglet
+
+[Tuto-démo du forum](https://thredded.org/thredded/)
+
+## Dashboard Administration (gem administrate)
+
+* `jean.dupont@yopmail.com` est administrateur et peut accéder à cette partie
+* les users, lessons, levels et quizz (assessments) sont gérables par ce dashboard
+

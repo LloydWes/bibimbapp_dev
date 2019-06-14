@@ -10,7 +10,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.paths << Rails.root.join('lib')
 Rails.application.config.assets.paths << Rails.root.join('vendor')
 
-Rails.application.config.assets.precompile += ['btn_scroll_up.js', 'level_buttons.js']
+Rails.application.config.assets.precompile += ['btn_scroll_up.js', 'level_buttons.js', 'assessment_new.js']
+Rails.application.config.assets.precompile += ['assessment_show.css']
 
 Rails.application.config.public_file_server.enabled = true
 # Precompile additional assets.

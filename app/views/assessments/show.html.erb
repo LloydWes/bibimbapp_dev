@@ -1,37 +1,37 @@
-<div class="container border border-primary">
-	<form action='<%= new_lesson_assessment_path %>' method="post">
-		<% @questions.each do |question| %>
-			<% row_number = 0 %>
-			<h4><%= question.question %> (correct answer is : <%= question.correct_letter %>)</h4>
-			<% if question.assessment_options.length > 0 %> <!-- verification useless peut etre ... --> <!-- current_answer.answer == option.answer -->
-				<% question.assessment_options.each do |option| %>
-					<% if row_number <= 0 %>
-						<div class='row col-xs-12 col-lg-12'>
-					<% end %>
-					<% current_answer = @answers.find_by(assessment_question_id: question.id) %>
-					<% correct_and_selected = false %>
-					<% incorrect = false %>
-					<% correct_but_not_selected = false %>
-					<% if current_answer.answer == option.answer && current_answer.correct%>
-					<% correct_and_selected = true %>
-					<% elsif current_answer.answer == option.answer && !current_answer.correct%>
-					<% incorrect = true %>
-					<% end %>
-					<% if question.correct_answer == option.answer && !current_answer.correct %>
-					<% correct_but_not_selected = true %>
-					<% end %>
-					<div class="card col-xs-5 col-lg-5 text-center m-1 <%= 'bg-success' if correct_and_selected %><%= 'bg-danger text-white' if incorrect %><%= 'border-success' if correct_but_not_selected %>"><%= option.letter %> <%= option.answer %></div>
-					<% row_number += 1 %>
-					<% if row_number >= 2 %>
-						</div>
-						<% row_number = 0 %>
-					<% end %>
-				<% end %>
-					<% if row_number < 2 && row_number > 0 %>
-					</div>
-					<% row_number = 0 %>
-					<% end %>
-			<% end %>
+<%= stylesheet_link_tag 'assessment_show.css', type: 'text/css'%>
+
+<% if @questions != nil %>
+<div class="container border">
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+	<input type='hidden' value='<%= @questions.first.assessment.id %>' name='assessment_id_<%= @questions.first.assessment.id %>'>
+	<% @questions.each do |question| %>
+	<h4><%= question.question %> (correct answer is : <%= question.correct_letter %> : <%= question.correct_answer %>)</h4>
+	<label hidden for='question_id_<%= question.id %>'></label>
+	<% if question.assessment_options.length > 0 %>
+	<div class='list-group borderless m-2 mb-0'>
+		<% question.assessment_options.each do |option| %>
+		<% current_answer = @answers.find_by(assessment_question_id: question.id) %>
+		<% correct_and_selected = false %>
+		<% incorrect = false %>
+		<% correct_but_not_selected = false %>
+		<% if current_answer.answer == option.answer && current_answer.correct%>
+		<% correct_and_selected = true %>
+		<% elsif current_answer.answer == option.answer && !current_answer.correct%>
+		<% incorrect = true %>
 		<% end %>
-	</form>
+		<% if question.correct_answer == option.answer && !current_answer.correct %>
+		<% correct_but_not_selected = true %>
+		<% end %>
+		<div class="list-group-item
+		<%= 'correct' if correct_and_selected -%>
+		<%= 'incorrect' if incorrect -%>
+		<%= 'correct_but_not_selected' if correct_but_not_selected -%>">
+		<%= option.letter -%> <%= option.answer -%></div>
+		<% end %>
+	</div>
+	<% end %>
+	<% end %>
 </div>
+<% else %>
+<p>Oups on dirait que vous avez atteri ici par erreur :(</p>
+	<% end %>

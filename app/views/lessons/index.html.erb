@@ -53,7 +53,9 @@
                 <%=  link_to lesson_path(lesson.id) do %>
                   <div class='block-icon rounded'>
                     <i class='<%= lesson.icone%>'> </i>
-                    <h2 class="heading heading-6 strong-600"><%= lesson.title %></h2>
+                  </div>
+                  <div class="row justify-content-center">
+                  <h2 class="heading heading-6 strong-600 col-6"><%= lesson.title %></h2>
                   </div>
                 <% end %>
                 <p class="px-2">
