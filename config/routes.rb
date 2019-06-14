@@ -32,4 +32,7 @@ Rails.application.routes.draw do
 
  # route for engine forum
  mount Thredded::Engine => '/forum'
+ devise_scope :user do 
+   delete '/users/sign_out', to: 'devise/sessions#destroy'
+ end
 end

@@ -10,8 +10,8 @@ module Admin
     # before_action :authenticate_user!
 
     before_action do
-      flash[:danger] = "Access forbiden"
       unless user_signed_in?
+        #flash[:danger] = "Access forbiden"
         redirect_to root_path 
       else
       redirect_to root_path unless current_user.is_admin?
