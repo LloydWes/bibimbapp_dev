@@ -1,8 +1,9 @@
+N° de la leçon,question_id,question:dtring,correct letter,correct answer
 1,1,How do you say 'How are you' if you talk to your friend?,b,ça va ?
 1,2,How do you say 'What's up?' if you talk to your friend?,b,quoi de neuf ?
 1,3,First time you meet someone you say...,b,enchanté
-1,4,"When you go to a bar at night, the waiter tell you...",a,bonsoir
-1,5,You go to bakery what do you say first of all?,b,bonjour
+1,4,"When you go to a bar at night, the waiter tell you...",b,bonsoir
+1,5,You go to bakery what do you say first of all?,a,bonjour
 1,6,"You want to say 'hi' to your friend, what do you use?",b,salut
 1,7,"You text your firend, what do you write to say 'hi'?",c,coucou
 1,8,First time you meet someone you say...,a,enchanté

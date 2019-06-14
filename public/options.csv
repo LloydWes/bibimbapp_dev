@@ -1,3 +1,4 @@
+question_id,letter,answer
 1,a,Oui et toi ?
 1,b,Ça va ?
 1,c,Salut ?
@@ -105,7 +106,7 @@
 27,a,faire
 27,b,vélo
 27,c,théâtre 
-27,d,during
+27,d,pendant
 28,a,J’ai … ans
 28,b,photography
 28,c,étudier
