@@ -28,12 +28,12 @@ Par la suite il pourra accéder aux cours et aux quiz, et progresser en fonction
 
 ## 🔥 Les gems utilisées :
 
-* font awesome pour intégrer des icones qui claquent
-* devise pour les login / signup etc..
-* thredded pour le forum 
-* gravatar pour les photos de profil
-* administrate pour le dashboard admin
-* AWS S3, liée à L'API du même nom : stockage d'images et de fichiers
+* `font awesome` pour intégrer des icones qui claquent
+* `devise` pour les login / signup etc..
+* `thredded` pour le forum 
+* `gravatar` pour les photos de profil
+* `administrate` pour le dashboard admin
+* `AWS S3`, liée à L'API du même nom : stockage d'images et de fichiers
 
 
 
