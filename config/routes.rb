@@ -23,7 +23,10 @@ Rails.application.routes.draw do
 
   # route for engine forum
   mount Thredded::Engine => '/forum'
-
+  devise_scope :user do 
+    delete '/users/sign_out', to: 'devise/sessions#destroy'
+  end
+    
   resources :lessons do
     resources :assessments, only: [:create, :index] do
       get 'take', to: 'assessments#new', on: :member, as: :new

@@ -11,7 +11,7 @@ module Admin
 
     before_action do
       unless user_signed_in?
-        flash[:danger] = "Access forbiden"
+        #flash[:danger] = "Access forbiden"
         redirect_to root_path 
       else
       redirect_to root_path unless current_user.is_admin?
