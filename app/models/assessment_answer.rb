@@ -13,7 +13,9 @@ class AssessmentAnswer < ApplicationRecord
   validates :letter, presence: true, allow_nil: false
   validates :answer, presence: true, allow_nil: false
   validates :attempt_number, presence: true, allow_nil: false
-  validates :correct, presence: true, allow_nil: false
+  # validates :correct, presence: true, allow_nil: false
+  # validates :correct, inclusion: {in: [false, true], message: "%{attribute} must be true or false"}
   validates :user_id, presence: true, allow_nil: false
 
+  
 end

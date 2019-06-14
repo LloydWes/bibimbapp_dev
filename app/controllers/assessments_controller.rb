@@ -48,6 +48,7 @@ def create
     # end
 
     #Assessment_anwsers is an array, each case contains a hash {question_id => option_id}
+    correct = nil
     assessment_answers.each do |pair|
       pair.each_pair do |key, value|
         question = AssessmentQuestion.find(key.to_i)
@@ -58,13 +59,15 @@ def create
       if question == nil || option == nil
 
       end
-
+      puts "-----------"*10, question.correct_letter, option.letter, '______________'*10
       # Check if the answer is correct
       if option.letter == question.correct_letter
         correct = true
       else
+        puts 'EEEEEEEEEEELLLLLLLLLLLLLLLLLLLLLLLLLLSSSSSSSSSSSSSSSSSSSSSSSSSSSEEEEEEEEEEEEEEEEEEEEEEEEEEEEE'
         correct = false
       end
+      puts correct
 
       #Prepare to catch exeception if an error occurs during the entry creation
       begin
@@ -78,7 +81,7 @@ def create
           user_id: current_user.id
           )
       rescue ActiveRecord::RecordInvalid => e
-        puts "Error: #{e}"
+        puts "Error: #{e}", correct
       end
 
     end
@@ -106,6 +109,7 @@ def create
 
     # Get the correct answers
     @answers = AssessmentAnswer.where(assessment_id: params[:id], user_id: current_user.id, attempt_number: params[:attempt])
+    puts "#"*20, @answers ,"#-"*20
     
 
   end
