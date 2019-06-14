@@ -76,3 +76,4 @@ gem 'administrate'
 gem "aws-sdk-s3", require: false
 gem 'validates_timeliness', '~> 5.0.0.alpha3'
 gem 'rspec-rails'
+gem 'activerecord-import'
