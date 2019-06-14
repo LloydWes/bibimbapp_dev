@@ -72,10 +72,11 @@ User.create!(
   gender: rand(0..1) > 0 ? 'female' : 'male',
   avatar: nil,
   is_admin?: true,
+  admin: true,
   level_id: Level.all.sample.id
 )
 puts '#######"Admin is jean.dupont@yopmail.com'
-puts "--> Admin has been created"
+puts "--> Admin has been created and forum"
 
 
 puts "Filling lessons"
