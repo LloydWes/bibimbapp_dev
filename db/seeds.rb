@@ -265,14 +265,14 @@ puts "-->lessons has been filled"
 
 puts "Filling results"
 score = nil
-20.times do
-  score = rand(5..20)
+30.times do
+  score = rand(5..100)
   Result.create!(
     score: rand(5..20),
     user_id: User.all.sample.id,
     lesson_id: Lesson.all.sample.id,
     date_exam: Faker::Time.between( Date.today-200, Date.today),
-    is_past?: score > 15 ? true : false
+    is_past?: score > 80 ? true : false
   )
 end
 puts "-->results has been filled"
