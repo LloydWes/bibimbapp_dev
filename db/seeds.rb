@@ -21,6 +21,7 @@ Vocabulary.destroy_all
 Lesson.destroy_all
 User.destroy_all
 Level.destroy_all
+Thredded::Messageboard.destroy_all
 puts "--> All tables are empty"
 
 # puts "Do you want to empy the assessments tables ? (y/N)"
