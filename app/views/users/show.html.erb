@@ -33,25 +33,34 @@
       <div class="tab-pane" id="stats">
 
 
-        <h4>Test passed :</h4>
+        <h4>Passed tests - level A1 : <%=@average_passed_tests_A1%>%</h4>
         <div class="progress">
-          <div class="progress-bar bg-primary" role="progressbar" style="width: <%=@average_passed_tests%>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%=@average_passed_tests%></div>
+          <div class="progress-bar bg-primary" role="progressbar" style="width: <%=@average_passed_tests_A1%>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%=@average_passed_tests%></div>
         </div>
         <br>
-        <h4>Average of test : </h4>
+        <h4>Passed tests - level A2 : <%=@average_passed_tests_A2%>%</h4>
         <div class="progress">
-          <div class="progress-bar bg-success" role="progressbar" style="width: <%=@average_result%>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%=@average_result%></div>
+          <div class="progress-bar bg-primary" role="progressbar" style="width: <%=@average_passed_tests_A2%>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%=@average_passed_tests%></div>
         </div>
         <br>
-        <h4>Progress of the current level :</h4>
+        <h4>Passed tests - level B1 : <%=@average_passed_tests_B1%>%</h4>
         <div class="progress">
-          <div class="progress-bar bg-warning" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar bg-primary" role="progressbar" style="width: <%=@average_passed_tests_B1%>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%=@average_passed_tests%></div>
         </div>
         <br>
-
-        <h4>Progress of all levels :</h4>
+        <h4>Passed tests - level B2 : <%=@average_passed_tests_B2%>%</h4>
         <div class="progress">
-          <div class="progress-bar bg-danger" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar bg-primary" role="progressbar" style="width: <%=@average_passed_tests_B2%>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%=@average_passed_tests%></div>
+        </div>
+        <br>
+        <h4>Passed tests - all level : <%=@average_passed_tests_total%>%</h4>
+        <div class="progress">
+          <div class="progress-bar bg-warning" role="progressbar" style="width: <%=@average_passed_tests_total%>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%=@average_passed_tests%></div>
+        </div>
+        <br>
+        <h4>Average score : <%=@average_result%>%</h4>
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" style="width: <%=@average_result%>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <br><br><br><br><br><br>
       </div><!--/col-9-->
