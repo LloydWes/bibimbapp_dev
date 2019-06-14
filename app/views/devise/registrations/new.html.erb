@@ -30,9 +30,6 @@
                     </div>
                   </div>
 
-                  <p><%= f.label :date_of_birth %><br />
-                  <%= f.text_field :date_of_birth, order: [:day, :month, :year], autofocus: true, autocomplete: "date_of_birth", "data-provide" => 'datepicker', class: "form-control form-control-lg datepicker" %></p><br />
-
                   <div class="col-md-6">
                     <div class="form-group">
                       <%= f.radio_button :gender, 'female', :checked => true %>
