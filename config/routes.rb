@@ -20,27 +20,14 @@ Rails.application.routes.draw do
 
   resources :lessons
   resources :vocabularies, only: [:index]
-  get '/vocabulary', to: 'static#vocabulary'
-  get '/level_choice', to: 'static#level_choice'
-  get '/contact', to:'static#contact'
-  # get '/cours', to: 'static#cours'
 
   # route for engine forum
   mount Thredded::Engine => '/forum'
 
-
-  # resources :assessments
-  # resources :assessment_questions do
-  #   resources :assessment_options
-  # end
-  # resources :assessment_answers
-
-  # resource :user_assessment_attempt, only: [:new, :create, :show, :index]
   resources :lessons do
     resources :assessments, only: [:create, :index] do
       get 'take', to: 'assessments#new', on: :member, as: :new
       get 'attempt/:attempt', to: 'assessments#show', on: :member, as: :show
     end
   end
-  # get "new/:template_id", :to => "Books#new_wp", :on => :collection
 end
