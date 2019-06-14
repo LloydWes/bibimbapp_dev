@@ -34,7 +34,7 @@ Par la suite il pourra accéder aux cours et aux quiz, et progresser en fonction
 * `administrate` pour le dashboard admin
 * `AWS S3`, liée à L'API du même nom : stockage d'images et de fichiers
 
-## Pour se connecter en admin : 
+## 👑 Pour se connecter en admin : 
 user : `jean.dupont@yopmail.com`
 mot de passe : `password`
 
