@@ -38,6 +38,7 @@ Par la suite il pourra accéder aux cours et aux quiz, et progresser en fonction
 user : `jean.dupont@yopmail.com`
 mot de passe : `password`
 
+
 ## Le forum (gem thredded)
 
 * l'accès se fait en étant déjà connecté
